@@ -8,3 +8,4 @@ server/uploads/*
 !server/uploads/.gitkeep
 .impeccable/config.local.json
 .DS_Store
+.neon

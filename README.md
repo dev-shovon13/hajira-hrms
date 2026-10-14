@@ -84,6 +84,18 @@ In `server/.env`:
 
 Leave `SMTP_HOST` empty in development: emails, including their verification and reset links, are printed to the API log. Leave `CLOUDINARY_URL` empty to store uploads in `server/uploads`.
 
+#### Using Neon instead of local Postgres
+The project is linked to a Neon project (`neon.ts`, `.neon`). Running `neon env pull` in the repo root writes two variables to `.env.local`:
+- `DATABASE_URL`: the pooled URL (host ends in `-pooler`), used by the app.
+- `DATABASE_URL_UNPOOLED`: the direct URL, which Prisma Migrate uses through `directUrl`.
+
+The API (`server/src/config/env.ts`) and the Prisma CLI (`server/prisma.config.ts`) load the database settings in the same order:
+1. real environment variables;
+2. the repo-root `.env.local` (Neon);
+3. `server/.env`.
+
+So when `.env.local` exists, everything uses Neon. Delete or rename it to go back to the local database in `server/.env`. On a host, set both variables in the platform's environment settings.
+
 ### 3. Migrate and seed
 ```bash
 npm run db:migrate      # applies prisma/migrations

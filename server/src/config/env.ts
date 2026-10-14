@@ -1,4 +1,10 @@
-import 'dotenv/config';
+import path from 'node:path';
+import dotenv from 'dotenv';
+
+// Precedence: real environment (hosting) > repo-root .env.local (Neon, from `neon env pull`) > server/.env.
+// dotenv never overwrites a variable that is already set, so load the highest-priority file first.
+dotenv.config({ path: path.resolve(process.cwd(), '../.env.local') });
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 import { z } from 'zod';
 
 const bool = z
