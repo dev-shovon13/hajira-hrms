@@ -1,0 +1,63 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Line 6</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F1B2D;--green:#006A4E;--ground:#fff;--line:#E4E8EE;--ink-2:#5A6577;--present:#2F8F5B;--late:#E0A100;--absent:#D7263D;--leave:#2F6FD6;--holiday:#7A4CC2}
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:"Hind Siliguri",system-ui,sans-serif;background:var(--ground);color:var(--navy)}
+header{height:64px;background:var(--navy);color:#fff;display:flex;align-items:center;gap:32px;padding:0 40px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px}.logo i{width:22px;height:22px;border-radius:50%;border:5px solid var(--green);background:#fff}
+nav{display:flex;gap:4px}nav a{padding:8px 14px;border-radius:6px;color:#B8C2D3;font-size:15px}nav a.on{background:#1D2C45;color:#fff}
+header .sp{flex:1}.pill{height:36px;border-radius:18px;background:#1D2C45;padding:0 16px;display:flex;align-items:center;font-size:14px;color:#B8C2D3}
+.board{background:var(--green);color:#fff;padding:28px 40px 34px;display:grid;grid-template-columns:auto 1fr auto;gap:48px;align-items:center}
+.board .k{font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.board .clk{font-size:80px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.board .next{font-size:22px;font-weight:500}.board .next small{display:block;font-size:14px;opacity:.8}
+.board button{height:60px;padding:0 34px;border-radius:30px;border:0;background:#F2B705;color:var(--navy);font:700 19px "Hind Siliguri"}
+.route{position:relative;margin:36px 40px 0;height:120px}
+.route .ln{position:absolute;top:40px;left:0;right:0;height:8px;border-radius:4px;background:var(--line)}
+.route .done{position:absolute;top:40px;left:0;width:21%;height:8px;border-radius:4px;background:var(--green)}
+.st{position:absolute;top:30px;transform:translateX(-50%);text-align:center;width:140px}
+.st i{display:block;margin:0 auto;width:28px;height:28px;border-radius:50%;background:#fff;border:6px solid var(--green)}
+.st.late i{border-color:var(--late)}.st.off i{border-color:#C5CCD6}.st.you i{background:var(--navy);border-color:#fff;box-shadow:0 0 0 3px var(--navy)}
+.st b{display:block;margin-top:10px;font-size:15px}.st span{font-size:13px;color:var(--ink-2)}
+.cols{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;padding:16px 40px}
+h2{font-size:18px;font-weight:600;margin-bottom:14px;display:flex;justify-content:space-between}h2 small{font-weight:400;color:var(--ink-2);font-size:14px}
+.idx{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.idx div{display:grid;grid-template-columns:90px 22px 1fr 110px 110px;align-items:center;padding:11px 18px;border-bottom:1px solid var(--line);font-size:15px}
+.idx div:last-child{border:0}.idx i{width:14px;height:14px;border-radius:50%;border:4px solid var(--c)}
+.idx em{font-style:normal;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.tag{font-size:13px;font-weight:600;color:var(--c)}
+.bal{display:grid;gap:12px}.b{border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:8px}
+.b b{font-size:28px;font-variant-numeric:tabular-nums}.b span{color:var(--ink-2);font-size:14px}
+.b .bar{grid-column:1/-1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}.b .bar i{display:block;height:100%;background:var(--leave)}
+</style></head><body>
+<header><div class="logo"><i></i>Hajira</div><nav><a class="on">Today</a><a>Attendance</a><a>Leave</a><a>Team</a><a>Holidays</a></nav><div class="sp"></div><div class="pill">Search…</div><div class="pill">🔔 3</div><div class="pill">Nusrat Jahan</div></header>
+<section class="board">
+  <div><div class="k">Office time · Dhaka</div><div class="clk">08:52:14</div></div>
+  <div class="next"><small>Next station</small>Shift starts 09:00 · grace until 09:15</div>
+  <button>Check in</button>
+</section>
+<div class="route"><div class="ln"></div><div class="done"></div>
+  <div class="st" style="left:4%"><i></i><b>Commute</b><span>06:00</span></div>
+  <div class="st you" style="left:21%"><i></i><b>You · now</b><span>08:52</span></div>
+  <div class="st off" style="left:24%"><i></i><b>Shift start</b><span>09:00</span></div>
+  <div class="st late" style="left:28%"><i></i><b>Grace ends</b><span>09:15</span></div>
+  <div class="st off" style="left:60%"><i></i><b>Lunch</b><span>13:00</span></div>
+  <div class="st off" style="left:92%"><i></i><b>Shift end</b><span>18:00</span></div>
+</div>
+<div class="cols">
+  <section><h2>October stations <small>9 working days</small></h2><div class="idx">
+    <div style="--c:var(--present)"><em>Tue 13</em><i></i><span>08:54 → 18:06</span><em>9h 12m</em><span class="tag">Present</span></div>
+    <div style="--c:var(--late)"><em>Mon 12</em><i></i><span>09:27 → 18:30</span><em>9h 03m</em><span class="tag">Late 12m</span></div>
+    <div style="--c:var(--absent)"><em>Sun 11</em><i></i><span>No check-in</span><em>—</em><span class="tag">Absent</span></div>
+    <div style="--c:var(--present)"><em>Thu 8</em><i></i><span>08:58 → 18:02</span><em>9h 04m</em><span class="tag">Present</span></div>
+    <div style="--c:var(--leave)"><em>Wed 7</em><i></i><span>Casual leave</span><em>—</em><span class="tag">On leave</span></div>
+  </div></section>
+  <section><h2>Leave balance <small>2026</small></h2><div class="bal">
+    <div class="b"><span>Casual</span><b>7<span> / 10</span></b><div class="bar"><i style="width:70%"></i></div></div>
+    <div class="b"><span>Sick</span><b>12<span> / 14</span></b><div class="bar"><i style="width:86%"></i></div></div>
+    <div class="b"><span>Annual</span><b>9<span> / 16</span></b><div class="bar"><i style="width:56%"></i></div></div>
+  </div></section>
+</div>
+</body></html>

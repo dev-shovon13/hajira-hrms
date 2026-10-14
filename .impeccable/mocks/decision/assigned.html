@@ -1,0 +1,100 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Running Stitch</title>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--indigo:#1E2756;--indigo-2:#2A3570;--ground:#F6F7FB;--card:#fff;--ink:#141A33;--ink-2:#545B78;--line:#E3E6F0;
+--present:#2F8F5B;--late:#D9971C;--absent:#C8372D;--leave:#2F6FD6;--holiday:#7A4CC2;--off:#C9CDDB}
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:"Anek Latin",system-ui,sans-serif;background:var(--ground);color:var(--ink);display:grid;grid-template-columns:248px 1fr}
+.rail{background:var(--indigo);color:#DCE0F5;padding:24px 16px;display:flex;flex-direction:column;gap:4px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:#fff;padding:0 8px 24px}
+.brand i{width:28px;height:28px;border-radius:6px;background:repeating-linear-gradient(90deg,#fff 0 6px,transparent 6px 10px) center/100% 2px no-repeat,var(--indigo-2)}
+.nav a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;font-size:15px;color:#C4CAE8;text-decoration:none}
+.nav a.on{background:var(--indigo-2);color:#fff;box-shadow:inset 3px 0 0 #F2B33D}
+.nav small{margin:20px 12px 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8890BC;display:block}
+.dot{width:16px;height:16px;border:1.5px solid currentColor;border-radius:4px;opacity:.8}
+.me{margin-top:auto;display:flex;gap:10px;align-items:center;padding:12px;border-top:1px solid #343F7C}
+.av{width:36px;height:36px;border-radius:50%;background:#F2B33D;color:var(--indigo);display:grid;place-items:center;font-weight:700}
+main{padding:0 40px;overflow:hidden}
+.top{height:72px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
+.search{flex:1;max-width:420px;height:40px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:0 14px;display:flex;align-items:center;color:var(--ink-2);font-size:14px}
+.top .sp{flex:1}.ico{width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:#fff;position:relative}
+.ico b{position:absolute;top:-5px;right:-5px;background:var(--absent);color:#fff;font-size:11px;border-radius:9px;padding:1px 6px}
+h1{font-size:28px;font-weight:600;margin:28px 0 4px}.sub{color:var(--ink-2);font-size:15px}
+.grid{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;margin-top:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.today{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
+.label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
+.clock{font-size:76px;font-weight:600;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums;margin-top:8px}
+.clock span{font-size:28px;color:var(--ink-2);margin-left:6px}
+.shift{margin-top:12px;color:var(--ink-2);font-size:15px}
+.btn{height:56px;padding:0 28px;border:0;border-radius:12px;background:var(--indigo);color:#fff;font:600 18px "Anek Latin";display:flex;align-items:center;gap:12px}
+.seam{margin-top:28px;position:relative;height:44px}
+.seam .track{position:absolute;top:20px;left:0;right:0;height:2px;background:repeating-linear-gradient(90deg,var(--off) 0 8px,transparent 8px 14px)}
+.seam .win{position:absolute;top:20px;left:12%;width:72%;height:2px;background:repeating-linear-gradient(90deg,var(--present) 0 8px,transparent 8px 14px)}
+.seam .grace{position:absolute;top:14px;left:12%;width:3%;height:14px;border-left:1px solid var(--late);border-right:1px solid var(--late);background:rgba(217,151,28,.12)}
+.seam .now{position:absolute;top:8px;left:10.6%;width:2px;height:26px;background:var(--ink)}
+.seam .t{position:absolute;top:32px;font-size:12px;color:var(--ink-2)}
+.month h3,.bal h3{font-size:17px;font-weight:600;display:flex;justify-content:space-between;align-items:baseline}
+.month h3 small,.bal h3 small{font-size:13px;color:var(--ink-2);font-weight:400}
+.row{display:grid;grid-template-columns:repeat(31,1fr);gap:4px;margin-top:20px}
+.d{height:34px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;color:var(--ink-2)}
+.d i{width:100%;height:3px;border-radius:2px}
+.P i{background:var(--present)}.L i{background:var(--late)}.A i{background:var(--absent)}.V i{background:var(--leave)}.W i{background:var(--off);height:1px}
+.T i{background:repeating-linear-gradient(90deg,var(--ink) 0 4px,transparent 4px 7px)}.F i{background:transparent;border-top:1px dashed var(--off);height:0}
+.T{color:var(--ink);font-weight:700}
+.tally{display:grid;grid-template-columns:repeat(4,1fr);margin-top:24px;border-top:1px solid var(--line)}
+.tally div{padding:16px 0 0}.tally b{display:block;font-size:30px;font-weight:600;font-variant-numeric:tabular-nums}
+.tally span{font-size:13px;color:var(--ink-2);display:flex;align-items:center;gap:6px}.tally span:before{content:"";width:14px;height:3px;border-radius:2px;background:var(--c)}
+.bal{margin-top:24px}
+.q{display:grid;grid-template-columns:110px 1fr 70px;align-items:center;gap:16px;margin-top:16px;font-size:15px}
+.q .s{display:grid;grid-auto-flow:column;gap:3px}.q .s i{height:3px;border-radius:2px;background:var(--leave)}.q .s i.u{background:var(--off);height:1px}
+.q b{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.act{margin-top:16px;display:flex;flex-direction:column}
+.act div{display:grid;grid-template-columns:12px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.act div:before{content:"";width:10px;height:3px;border-radius:2px;background:var(--c)}
+.act time{color:var(--ink-2);font-size:13px}
+</style></head><body>
+<aside class="rail">
+  <div class="brand"><i></i>Hajira</div>
+  <nav class="nav">
+    <a class="on"><span class="dot"></span>Dashboard</a><a><span class="dot"></span>My attendance</a><a><span class="dot"></span>Leave</a><a><span class="dot"></span>Team calendar</a><a><span class="dot"></span>Holidays</a>
+    <small>Requests</small><a><span class="dot"></span>Regularization</a><a><span class="dot"></span>Notifications</a>
+  </nav>
+  <div class="me"><div class="av">NJ</div><div><div style="color:#fff;font-weight:600">Nusrat Jahan</div><div style="font-size:13px">Software Engineer</div></div></div>
+</aside>
+<main>
+  <div class="top"><div class="search">Search people, requests, dates…</div><div class="sp"></div><div class="ico"><b>3</b></div><div class="ico"></div></div>
+  <h1>Good morning, Nusrat</h1><div class="sub">Wednesday, 14 October 2026 · Engineering · Morning shift</div>
+  <div class="grid">
+    <section class="card">
+      <div class="today">
+        <div><div class="label">Office time · Asia/Dhaka</div><div class="clock">08:52<span>:14</span></div>
+        <div class="shift">Shift 09:00 – 18:00 · grace until 09:15 · not checked in</div></div>
+        <button class="btn">Check in</button>
+      </div>
+      <div class="seam"><div class="track"></div><div class="win"></div><div class="grace"></div><div class="now"></div>
+        <span class="t" style="left:0">06:00</span><span class="t" style="left:11%">09:00</span><span class="t" style="left:80%">18:00</span><span class="t" style="right:0">21:00</span></div>
+    </section>
+    <section class="card month">
+      <h3>October so far <small>9 working days</small></h3>
+      <div class="row">
+        <div class="d P"><i></i>1</div><div class="d W"><i></i>2</div><div class="d W"><i></i>3</div><div class="d P"><i></i>4</div><div class="d L"><i></i>5</div><div class="d P"><i></i>6</div><div class="d V"><i></i>7</div><div class="d P"><i></i>8</div><div class="d W"><i></i>9</div><div class="d W"><i></i>10</div><div class="d A"><i></i>11</div><div class="d L"><i></i>12</div><div class="d P"><i></i>13</div><div class="d T"><i></i>14</div><div class="d F"><i></i>15</div><div class="d W"><i></i>16</div><div class="d W"><i></i>17</div><div class="d F"><i></i>18</div><div class="d F"><i></i>19</div><div class="d F"><i></i>20</div><div class="d F"><i></i>21</div><div class="d F"><i></i>22</div><div class="d W"><i></i>23</div><div class="d W"><i></i>24</div><div class="d F"><i></i>25</div><div class="d F"><i></i>26</div><div class="d F"><i></i>27</div><div class="d F"><i></i>28</div><div class="d F"><i></i>29</div><div class="d W"><i></i>30</div><div class="d W"><i></i>31</div>
+      </div>
+      <div class="tally"><div style="--c:var(--present)"><b>5</b><span>Present</span></div><div style="--c:var(--late)"><b>2</b><span>Late</span></div><div style="--c:var(--absent)"><b>1</b><span>Absent</span></div><div style="--c:var(--leave)"><b>1</b><span>On leave</span></div></div>
+    </section>
+  </div>
+  <div class="grid">
+    <section class="card bal"><h3>Leave balance <small>2026</small></h3>
+      <div class="q"><span>Casual</span><div class="s"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="u"></i><i class="u"></i><i class="u"></i></div><b>7 / 10</b></div>
+      <div class="q"><span>Sick</span><div class="s"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="u"></i><i class="u"></i></div><b>12 / 14</b></div>
+      <div class="q"><span>Annual</span><div class="s"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i></div><b>9 / 16</b></div>
+    </section>
+    <section class="card bal"><h3>Recent activity <small>View all</small></h3>
+      <div class="act"><div style="--c:var(--late)"><span>Late check-in · 09:27 (12 min past grace)</span><time>12 Oct</time></div>
+      <div style="--c:var(--leave)"><span>Casual leave approved by Tanvir Hasan</span><time>6 Oct</time></div>
+      <div style="--c:var(--absent)"><span>Marked absent · regularization pending</span><time>11 Oct</time></div></div>
+    </section>
+  </div>
+</main>
+</body></html>

@@ -1,0 +1,34 @@
+import { Router } from 'express';
+import { authRoutes } from '@/modules/auth/routes';
+import { userRoutes } from '@/modules/users/routes';
+import { departmentRoutes } from '@/modules/departments/routes';
+import { designationRoutes } from '@/modules/designations/routes';
+import { shiftRoutes } from '@/modules/shifts/routes';
+import { holidayRoutes } from '@/modules/holidays/routes';
+import { attendanceRoutes } from '@/modules/attendance/routes';
+import { regularizationRoutes } from '@/modules/regularization/routes';
+import { leaveTypeRoutes } from '@/modules/leaveTypes/routes';
+import { leaveRoutes } from '@/modules/leave/routes';
+import { notificationRoutes } from '@/modules/notifications/routes';
+import { settingsRoutes } from '@/modules/settings/routes';
+import { auditRoutes } from '@/modules/audit/routes';
+import { dashboardRoutes } from '@/modules/dashboard/routes';
+import { reportRoutes } from '@/modules/reports/routes';
+
+export const apiRouter = Router();
+
+apiRouter.use('/auth', authRoutes);
+apiRouter.use('/users', userRoutes);
+apiRouter.use('/departments', departmentRoutes);
+apiRouter.use('/designations', designationRoutes);
+apiRouter.use('/shifts', shiftRoutes);
+apiRouter.use('/holidays', holidayRoutes);
+apiRouter.use('/attendance', attendanceRoutes);
+apiRouter.use('/regularizations', regularizationRoutes);
+apiRouter.use('/leave-types', leaveTypeRoutes);
+apiRouter.use('/leave', leaveRoutes);
+apiRouter.use('/notifications', notificationRoutes);
+apiRouter.use('/settings', settingsRoutes);
+apiRouter.use('/audit-logs', auditRoutes);
+apiRouter.use('/dashboard', dashboardRoutes);
+apiRouter.use('/reports', reportRoutes);

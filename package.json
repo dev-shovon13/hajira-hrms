@@ -1,0 +1,32 @@
+{
+  "name": "hajira",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Hajira: employee attendance & leave management (Next.js + Express + Prisma)",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w server && npm run build -w client",
+    "db:migrate": "npm run db:migrate -w server",
+    "db:seed": "npm run db:seed -w server",
+    "db:reset": "npm run db:reset -w server",
+    "lint": "npm run lint -w server && npm run lint -w client",
+    "typecheck": "npm run typecheck -w shared && npm run typecheck -w server && npm run typecheck -w client",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "overrides": {
+    "react-is": "^19.0.0"
+  }
+}

@@ -1,0 +1,1299 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T18:46:34.191Z",
+  "title": "Design System: Hajira",
+  "extensions": {
+    "colorMeta": {
+      "indigo-rail": {
+        "role": "primary",
+        "displayName": "Indigo Rail",
+        "canonical": "#1e2756",
+        "oklch": "oklch(29.3% 0.085 272.0)",
+        "tonalRamp": [
+          "#04032e",
+          "#171e4c",
+          "#303b6c",
+          "#4d5a8e",
+          "#6b7ab0",
+          "#8c9bd4",
+          "#b0c1fc",
+          "#e9eefe"
+        ]
+      },
+      "indigo-raised": {
+        "role": "primary",
+        "displayName": "Indigo Raised",
+        "canonical": "#2a3570",
+        "oklch": "oklch(35.4% 0.102 272.2)",
+        "tonalRamp": [
+          "#040132",
+          "#151b54",
+          "#2e3a75",
+          "#4a5897",
+          "#6879ba",
+          "#889ade",
+          "#b0c1fd",
+          "#e9eefe"
+        ]
+      },
+      "indigo-rail-border": {
+        "role": "primary",
+        "displayName": "Indigo Rail Border",
+        "canonical": "#343f7c",
+        "oklch": "oklch(39.1% 0.103 273.0)",
+        "tonalRamp": [
+          "#050032",
+          "#161b55",
+          "#2f3975",
+          "#4b5898",
+          "#6978bb",
+          "#899adf",
+          "#b1c1fe",
+          "#e9eeff"
+        ]
+      },
+      "rail-thread": {
+        "role": "primary",
+        "displayName": "Rail Thread",
+        "canonical": "#dce0f5",
+        "oklch": "oklch(91.0% 0.029 277.2)",
+        "tonalRamp": [
+          "#080a17",
+          "#202332",
+          "#3c3f4f",
+          "#595c6e",
+          "#797c8f",
+          "#999db1",
+          "#bfc3d7",
+          "#eaedfe"
+        ]
+      },
+      "rail-muted": {
+        "role": "primary",
+        "displayName": "Rail Muted",
+        "canonical": "#a1a9d4",
+        "oklch": "oklch(74.3% 0.063 276.5)",
+        "tonalRamp": [
+          "#060625",
+          "#1d2042",
+          "#373c61",
+          "#545a81",
+          "#737aa3",
+          "#949cc6",
+          "#b9c1ed",
+          "#eaeefe"
+        ]
+      },
+      "marigold": {
+        "role": "secondary",
+        "displayName": "Marigold",
+        "canonical": "#f2b33d",
+        "oklch": "oklch(80.6% 0.147 79.0)",
+        "tonalRamp": [
+          "#120900",
+          "#322000",
+          "#553a02",
+          "#7b5607",
+          "#a17419",
+          "#cb9323",
+          "#f7b843",
+          "#feecd0"
+        ]
+      },
+      "cotton-ground": {
+        "role": "neutral",
+        "displayName": "Cotton Ground",
+        "canonical": "#f6f7fb",
+        "oklch": "oklch(97.7% 0.005 275.0)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#232427",
+          "#3f4043",
+          "#5d5d61",
+          "#7c7d80",
+          "#9d9ea2",
+          "#c3c4c8",
+          "#edeef2"
+        ]
+      },
+      "card-white": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ]
+      },
+      "indigo-ink": {
+        "role": "neutral",
+        "displayName": "Indigo Ink",
+        "canonical": "#141a33",
+        "oklch": "oklch(22.6% 0.049 271.8)",
+        "tonalRamp": [
+          "#050820",
+          "#1c223c",
+          "#363e5a",
+          "#535c7a",
+          "#737c9b",
+          "#939dbe",
+          "#b8c3e5",
+          "#e9eeff"
+        ]
+      },
+      "slate-ink": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "#545b78",
+        "oklch": "oklch(47.7% 0.048 273.9)",
+        "tonalRamp": [
+          "#06081f",
+          "#1d223b",
+          "#383e59",
+          "#555c79",
+          "#747c9a",
+          "#959dbd",
+          "#bac3e4",
+          "#e9eefe"
+        ]
+      },
+      "cotton-wash": {
+        "role": "tertiary",
+        "displayName": "Cotton Wash",
+        "canonical": "#eef0f7",
+        "oklch": "oklch(95.6% 0.010 273.4)",
+        "tonalRamp": [
+          "#0a0b0f",
+          "#222429",
+          "#3e3f45",
+          "#5c5d63",
+          "#7b7d83",
+          "#9c9ea5",
+          "#c2c4ca",
+          "#eceef5"
+        ]
+      },
+      "accent-wash": {
+        "role": "tertiary",
+        "displayName": "Accent Wash",
+        "canonical": "#e9ecf7",
+        "oklch": "oklch(94.4% 0.015 273.8)",
+        "tonalRamp": [
+          "#090b12",
+          "#22242c",
+          "#3d3f48",
+          "#5b5d66",
+          "#7a7d87",
+          "#9b9ea8",
+          "#c1c4ce",
+          "#ebeef9"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e3e6f0",
+        "oklch": "oklch(92.6% 0.014 272.7)",
+        "tonalRamp": [
+          "#090b11",
+          "#22242b",
+          "#3d3f47",
+          "#5b5d66",
+          "#7a7d86",
+          "#9b9ea7",
+          "#c1c4cd",
+          "#ebeef8"
+        ]
+      },
+      "input-stroke": {
+        "role": "neutral",
+        "displayName": "Input Stroke",
+        "canonical": "#d3d7e5",
+        "oklch": "oklch(88.0% 0.020 273.2)",
+        "tonalRamp": [
+          "#080b14",
+          "#21232e",
+          "#3c3f4a",
+          "#5a5d69",
+          "#797d89",
+          "#9a9eab",
+          "#c0c4d1",
+          "#eaeefc"
+        ]
+      },
+      "focus-indigo": {
+        "role": "neutral",
+        "displayName": "Focus Indigo",
+        "canonical": "#4a57a8",
+        "oklch": "oklch(48.8% 0.129 273.8)",
+        "tonalRamp": [
+          "#050131",
+          "#161461",
+          "#2d3582",
+          "#4855a5",
+          "#6675c9",
+          "#8597ee",
+          "#b2c1fc",
+          "#e9eefe"
+        ]
+      },
+      "off-thread": {
+        "role": "neutral",
+        "displayName": "Off Thread",
+        "canonical": "#c9cddb",
+        "oklch": "oklch(84.9% 0.020 273.2)",
+        "tonalRamp": [
+          "#080b14",
+          "#21232e",
+          "#3c3f4b",
+          "#5a5d69",
+          "#797d89",
+          "#9a9eab",
+          "#c0c4d1",
+          "#eaeefc"
+        ]
+      },
+      "present-thread": {
+        "role": "tertiary",
+        "displayName": "Present Thread",
+        "canonical": "#2f8f5b",
+        "oklch": "oklch(58.1% 0.120 155.6)",
+        "tonalRamp": [
+          "#001005",
+          "#022c17",
+          "#084d2b",
+          "#126f42",
+          "#33925e",
+          "#58b47e",
+          "#7fdba3",
+          "#c8feda"
+        ]
+      },
+      "late-thread": {
+        "role": "tertiary",
+        "displayName": "Late Thread",
+        "canonical": "#d9971c",
+        "oklch": "oklch(72.3% 0.145 76.0)",
+        "tonalRamp": [
+          "#130900",
+          "#332001",
+          "#563905",
+          "#7c550d",
+          "#a67103",
+          "#d19009",
+          "#fab647",
+          "#feecd3"
+        ]
+      },
+      "absent-thread": {
+        "role": "tertiary",
+        "displayName": "Absent Thread",
+        "canonical": "#c8372d",
+        "oklch": "oklch(55.5% 0.184 28.5)",
+        "tonalRamp": [
+          "#1f0000",
+          "#4a0302",
+          "#7a0b09",
+          "#ad1713",
+          "#d44338",
+          "#fc6859",
+          "#fbada2",
+          "#ffe9e5"
+        ]
+      },
+      "leave-thread": {
+        "role": "tertiary",
+        "displayName": "Leave Thread",
+        "canonical": "#2f6fd6",
+        "oklch": "oklch(55.7% 0.172 259.7)",
+        "tonalRamp": [
+          "#000923",
+          "#002055",
+          "#02398a",
+          "#1657bc",
+          "#3979e1",
+          "#669ef8",
+          "#a3c6fe",
+          "#e6efff"
+        ]
+      },
+      "holiday-thread": {
+        "role": "tertiary",
+        "displayName": "Holiday Thread",
+        "canonical": "#7a4cc2",
+        "oklch": "oklch(52.8% 0.177 298.0)",
+        "tonalRamp": [
+          "#100126",
+          "#2f015c",
+          "#4f168e",
+          "#6c3db2",
+          "#8c5fd7",
+          "#ad82fd",
+          "#ccb7fc",
+          "#f0ebfe"
+        ]
+      },
+      "halfday-thread": {
+        "role": "tertiary",
+        "displayName": "Halfday Thread",
+        "canonical": "#0e8a8a",
+        "oklch": "oklch(57.5% 0.096 194.8)",
+        "tonalRamp": [
+          "#000e0e",
+          "#032a2a",
+          "#004a4a",
+          "#046c6c",
+          "#198f8f",
+          "#48b1b1",
+          "#72d8d7",
+          "#b3fffe"
+        ]
+      },
+      "present-ink": {
+        "role": "tertiary",
+        "displayName": "Present Ink",
+        "canonical": "#22704a",
+        "oklch": "oklch(48.7% 0.097 158.0)",
+        "tonalRamp": [
+          "#000f06",
+          "#022c19",
+          "#074c2e",
+          "#1f6e48",
+          "#448f67",
+          "#66b187",
+          "#8cd8ac",
+          "#c4ffdb"
+        ]
+      },
+      "late-ink": {
+        "role": "tertiary",
+        "displayName": "Late Ink",
+        "canonical": "#8f5d07",
+        "oklch": "oklch(52.1% 0.109 72.1)",
+        "tonalRamp": [
+          "#130900",
+          "#341f00",
+          "#593802",
+          "#805306",
+          "#a57127",
+          "#c8934c",
+          "#f0b972",
+          "#feebd4"
+        ]
+      },
+      "absent-ink": {
+        "role": "tertiary",
+        "displayName": "Absent Ink",
+        "canonical": "#a42a21",
+        "oklch": "oklch(47.8% 0.160 28.8)",
+        "tonalRamp": [
+          "#1e0100",
+          "#4b0101",
+          "#7b0605",
+          "#a52b22",
+          "#cb4f42",
+          "#f17263",
+          "#fdaca0",
+          "#fee9e6"
+        ]
+      },
+      "leave-ink": {
+        "role": "tertiary",
+        "displayName": "Leave Ink",
+        "canonical": "#2257ad",
+        "oklch": "oklch(47.2% 0.149 259.8)",
+        "tonalRamp": [
+          "#000924",
+          "#022052",
+          "#00398c",
+          "#255ab0",
+          "#457bd4",
+          "#659dfa",
+          "#a5c6fa",
+          "#e5efff"
+        ]
+      },
+      "holiday-ink": {
+        "role": "tertiary",
+        "displayName": "Holiday Ink",
+        "canonical": "#6240a1",
+        "oklch": "oklch(46.1% 0.151 296.1)",
+        "tonalRamp": [
+          "#100127",
+          "#2e025d",
+          "#4a2484",
+          "#6746a7",
+          "#8767cb",
+          "#a888f0",
+          "#cab7fe",
+          "#f0ebff"
+        ]
+      },
+      "halfday-ink": {
+        "role": "tertiary",
+        "displayName": "Halfday Ink",
+        "canonical": "#0a6a6a",
+        "oklch": "oklch(47.6% 0.079 194.8)",
+        "tonalRamp": [
+          "#000e0e",
+          "#012a2a",
+          "#044a4a",
+          "#0d6b6b",
+          "#3a8c8c",
+          "#5eaead",
+          "#84d5d4",
+          "#b5fefd"
+        ]
+      },
+      "present-wash": {
+        "role": "tertiary",
+        "displayName": "Present Wash",
+        "canonical": "#e7f4ec",
+        "oklch": "oklch(95.5% 0.017 159.1)",
+        "tonalRamp": [
+          "#050d09",
+          "#1d2721",
+          "#38433c",
+          "#56615a",
+          "#75817a",
+          "#96a29a",
+          "#bbc8c0",
+          "#e5f2ea"
+        ]
+      },
+      "late-wash": {
+        "role": "tertiary",
+        "displayName": "Late Wash",
+        "canonical": "#fbf1dd",
+        "oklch": "oklch(96.1% 0.028 84.6)",
+        "tonalRamp": [
+          "#110a01",
+          "#2a2314",
+          "#473f2f",
+          "#655d4c",
+          "#857c6a",
+          "#a79d8b",
+          "#cdc3b0",
+          "#f7edda"
+        ]
+      },
+      "absent-wash": {
+        "role": "tertiary",
+        "displayName": "Absent Wash",
+        "canonical": "#faeae8",
+        "oklch": "oklch(94.9% 0.018 26.1)",
+        "tonalRamp": [
+          "#120807",
+          "#2c2120",
+          "#493c3b",
+          "#675a58",
+          "#887978",
+          "#a99a99",
+          "#cfc0be",
+          "#faeae8"
+        ]
+      },
+      "leave-wash": {
+        "role": "tertiary",
+        "displayName": "Leave Wash",
+        "canonical": "#e8f0fc",
+        "oklch": "oklch(95.3% 0.018 258.4)",
+        "tonalRamp": [
+          "#070b13",
+          "#1f242d",
+          "#3a404a",
+          "#575e68",
+          "#777e88",
+          "#989faa",
+          "#bdc5d0",
+          "#e7effb"
+        ]
+      },
+      "holiday-wash": {
+        "role": "tertiary",
+        "displayName": "Holiday Wash",
+        "canonical": "#f1ebfa",
+        "oklch": "oklch(94.9% 0.021 304.0)",
+        "tonalRamp": [
+          "#0d0912",
+          "#26222c",
+          "#423d49",
+          "#605b67",
+          "#807a88",
+          "#a19ba9",
+          "#c7c1cf",
+          "#f1ebfa"
+        ]
+      },
+      "halfday-wash": {
+        "role": "tertiary",
+        "displayName": "Halfday Wash",
+        "canonical": "#e2f3f3",
+        "oklch": "oklch(95.2% 0.018 196.9)",
+        "tonalRamp": [
+          "#030d0e",
+          "#1a2727",
+          "#354343",
+          "#526161",
+          "#718181",
+          "#92a2a2",
+          "#b7c8c8",
+          "#e1f2f2"
+        ]
+      },
+      "chart-present": {
+        "role": "tertiary",
+        "displayName": "Chart Present",
+        "canonical": "#2f8f5b",
+        "oklch": "oklch(58.1% 0.120 155.6)",
+        "tonalRamp": [
+          "#001005",
+          "#022c17",
+          "#084d2b",
+          "#126f42",
+          "#33925e",
+          "#58b47e",
+          "#7fdba3",
+          "#c8feda"
+        ]
+      },
+      "chart-late": {
+        "role": "tertiary",
+        "displayName": "Chart Late",
+        "canonical": "#d9971c",
+        "oklch": "oklch(72.3% 0.145 76.0)",
+        "tonalRamp": [
+          "#130900",
+          "#332001",
+          "#563905",
+          "#7c550d",
+          "#a67103",
+          "#d19009",
+          "#fab647",
+          "#feecd3"
+        ]
+      },
+      "chart-absent": {
+        "role": "tertiary",
+        "displayName": "Chart Absent",
+        "canonical": "#c8372d",
+        "oklch": "oklch(55.5% 0.184 28.5)",
+        "tonalRamp": [
+          "#1f0000",
+          "#4a0302",
+          "#7a0b09",
+          "#ad1713",
+          "#d44338",
+          "#fc6859",
+          "#fbada2",
+          "#ffe9e5"
+        ]
+      },
+      "chart-leave": {
+        "role": "tertiary",
+        "displayName": "Chart Leave",
+        "canonical": "#2f6fd6",
+        "oklch": "oklch(55.7% 0.172 259.7)",
+        "tonalRamp": [
+          "#000923",
+          "#002055",
+          "#02398a",
+          "#1657bc",
+          "#3979e1",
+          "#669ef8",
+          "#a3c6fe",
+          "#e6efff"
+        ]
+      },
+      "leave-annual": {
+        "role": "tertiary",
+        "displayName": "Leave Annual",
+        "canonical": "#4457c9",
+        "oklch": "oklch(50.8% 0.177 271.5)",
+        "tonalRamp": [
+          "#040130",
+          "#120471",
+          "#252b9b",
+          "#3d4ebf",
+          "#5971e5",
+          "#7d97fb",
+          "#b0c2fb",
+          "#e9eefe"
+        ]
+      },
+      "leave-casual": {
+        "role": "tertiary",
+        "displayName": "Leave Casual",
+        "canonical": "#d55181",
+        "oklch": "oklch(62.2% 0.171 0.8)",
+        "tonalRamp": [
+          "#1d010a",
+          "#480121",
+          "#76063b",
+          "#a42058",
+          "#ca4677",
+          "#f06a98",
+          "#fca8c0",
+          "#fee8ed"
+        ]
+      },
+      "leave-sick": {
+        "role": "tertiary",
+        "displayName": "Leave Sick",
+        "canonical": "#1f9fd0",
+        "oklch": "oklch(66.0% 0.125 230.5)",
+        "tonalRamp": [
+          "#000d15",
+          "#022838",
+          "#09465e",
+          "#136687",
+          "#0f89b5",
+          "#33acdd",
+          "#76d1fc",
+          "#ddf2fe"
+        ]
+      },
+      "leave-other": {
+        "role": "tertiary",
+        "displayName": "Leave Other",
+        "canonical": "#7c829c",
+        "oklch": "oklch(61.1% 0.040 274.9)",
+        "tonalRamp": [
+          "#07091c",
+          "#1e2237",
+          "#393e55",
+          "#575c75",
+          "#767c96",
+          "#979db8",
+          "#bcc3df",
+          "#eaeefe"
+        ]
+      },
+      "dark-cloth": {
+        "role": "neutral",
+        "displayName": "Dark Cloth",
+        "canonical": "#0e1124",
+        "oklch": "oklch(18.6% 0.039 275.2)",
+        "tonalRamp": [
+          "#07091b",
+          "#1f2237",
+          "#3a3e55",
+          "#575c74",
+          "#767c95",
+          "#979db7",
+          "#bcc3de",
+          "#eaeeff"
+        ]
+      },
+      "dark-card": {
+        "role": "neutral",
+        "displayName": "Dark Card",
+        "canonical": "#151935",
+        "oklch": "oklch(22.6% 0.054 275.1)",
+        "tonalRamp": [
+          "#060721",
+          "#1d213e",
+          "#373d5c",
+          "#545b7d",
+          "#747b9e",
+          "#949cc1",
+          "#b9c2e8",
+          "#e9eeff"
+        ]
+      },
+      "dark-popover": {
+        "role": "neutral",
+        "displayName": "Dark Popover",
+        "canonical": "#181c3c",
+        "oklch": "oklch(24.2% 0.061 275.5)",
+        "tonalRamp": [
+          "#060624",
+          "#1c2141",
+          "#373d60",
+          "#545b80",
+          "#737ba2",
+          "#939cc5",
+          "#b8c2ec",
+          "#eaeefe"
+        ]
+      },
+      "dark-rail": {
+        "role": "primary",
+        "displayName": "Dark Rail",
+        "canonical": "#0a0d1e",
+        "oklch": "oklch(16.6% 0.036 274.3)",
+        "tonalRamp": [
+          "#07091a",
+          "#1f2335",
+          "#3a3f53",
+          "#575c72",
+          "#767c93",
+          "#979db5",
+          "#bdc3dc",
+          "#e9eeff"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark Ink",
+        "canonical": "#e7e9f5",
+        "oklch": "oklch(93.6% 0.016 278.5)",
+        "tonalRamp": [
+          "#0a0a12",
+          "#22232c",
+          "#3e3f48",
+          "#5b5d67",
+          "#7b7c87",
+          "#9c9ea9",
+          "#c1c3cf",
+          "#eceefa"
+        ]
+      },
+      "dark-slate-ink": {
+        "role": "neutral",
+        "displayName": "Dark Slate Ink",
+        "canonical": "#a6acce",
+        "oklch": "oklch(75.1% 0.049 277.3)",
+        "tonalRamp": [
+          "#07081f",
+          "#1e213c",
+          "#393d5a",
+          "#565b7a",
+          "#767b9b",
+          "#969cbe",
+          "#bcc2e5",
+          "#eaedff"
+        ]
+      },
+      "dark-hairline": {
+        "role": "neutral",
+        "displayName": "Dark Hairline",
+        "canonical": "#262c55",
+        "oklch": "oklch(31.0% 0.074 275.0)",
+        "tonalRamp": [
+          "#060429",
+          "#1a1f47",
+          "#353c66",
+          "#515a87",
+          "#707aa9",
+          "#919bcd",
+          "#b6c1f4",
+          "#eaeefe"
+        ]
+      },
+      "dark-focus": {
+        "role": "neutral",
+        "displayName": "Dark Focus",
+        "canonical": "#8f9bff",
+        "oklch": "oklch(72.2% 0.145 276.9)",
+        "tonalRamp": [
+          "#07012f",
+          "#1a0b67",
+          "#31308a",
+          "#4b51ad",
+          "#6972d2",
+          "#8894f7",
+          "#b5bffd",
+          "#eaedff"
+        ]
+      },
+      "dark-off-thread": {
+        "role": "neutral",
+        "displayName": "Dark Off Thread",
+        "canonical": "#3a4070",
+        "oklch": "oklch(39.0% 0.081 276.5)",
+        "tonalRamp": [
+          "#06032c",
+          "#1b1e4a",
+          "#353b6a",
+          "#52598b",
+          "#7079ae",
+          "#919ad1",
+          "#b6c0f9",
+          "#eaeeff"
+        ]
+      },
+      "dark-present-thread": {
+        "role": "tertiary",
+        "displayName": "Dark Present Thread",
+        "canonical": "#4fbf85",
+        "oklch": "oklch(72.5% 0.134 157.8)",
+        "tonalRamp": [
+          "#000f06",
+          "#032c19",
+          "#0b4c2e",
+          "#166f46",
+          "#14945d",
+          "#46b77e",
+          "#70dea2",
+          "#c5fedb"
+        ]
+      },
+      "dark-late-thread": {
+        "role": "tertiary",
+        "displayName": "Dark Late Thread",
+        "canonical": "#f0b44a",
+        "oklch": "oklch(80.7% 0.139 78.5)",
+        "tonalRamp": [
+          "#120900",
+          "#312002",
+          "#543a09",
+          "#7c5502",
+          "#a37313",
+          "#cd921c",
+          "#f4b84f",
+          "#ffeccf"
+        ]
+      },
+      "dark-absent-thread": {
+        "role": "tertiary",
+        "displayName": "Dark Absent Thread",
+        "canonical": "#ef6a5e",
+        "oklch": "oklch(68.5% 0.167 27.5)",
+        "tonalRamp": [
+          "#1f0000",
+          "#4a0304",
+          "#790d0e",
+          "#a72622",
+          "#ce4c42",
+          "#f46f63",
+          "#fbada3",
+          "#ffe9e6"
+        ]
+      },
+      "dark-leave-thread": {
+        "role": "tertiary",
+        "displayName": "Dark Leave Thread",
+        "canonical": "#6fa0ff",
+        "oklch": "oklch(71.3% 0.149 262.6)",
+        "tonalRamp": [
+          "#00062a",
+          "#001a5f",
+          "#0f378d",
+          "#2d58b0",
+          "#4b79d5",
+          "#6b9cfa",
+          "#a7c5fb",
+          "#e7effe"
+        ]
+      },
+      "dark-holiday-thread": {
+        "role": "tertiary",
+        "displayName": "Dark Holiday Thread",
+        "canonical": "#a988f0",
+        "oklch": "oklch(70.0% 0.151 297.0)",
+        "tonalRamp": [
+          "#100127",
+          "#2e015d",
+          "#4b2484",
+          "#6845a7",
+          "#8866cb",
+          "#a988f0",
+          "#cab7fd",
+          "#f0ebff"
+        ]
+      },
+      "dark-halfday-thread": {
+        "role": "tertiary",
+        "displayName": "Dark Halfday Thread",
+        "canonical": "#3cc2c2",
+        "oklch": "oklch(74.4% 0.112 195.0)",
+        "tonalRamp": [
+          "#000e0e",
+          "#042a2a",
+          "#014a4a",
+          "#066b6c",
+          "#1b8f8f",
+          "#26b4b4",
+          "#5bdbdb",
+          "#b3fffe"
+        ]
+      },
+      "dark-chart-present": {
+        "role": "tertiary",
+        "displayName": "Dark Chart Present",
+        "canonical": "#33a06a",
+        "oklch": "oklch(63.0% 0.128 157.5)",
+        "tonalRamp": [
+          "#000f06",
+          "#012c18",
+          "#054d2d",
+          "#0e6f45",
+          "#21935e",
+          "#4db67f",
+          "#75dda3",
+          "#c7fedc"
+        ]
+      },
+      "dark-chart-late": {
+        "role": "tertiary",
+        "displayName": "Dark Chart Late",
+        "canonical": "#c0880e",
+        "oklch": "oklch(66.5% 0.135 78.7)",
+        "tonalRamp": [
+          "#120900",
+          "#322000",
+          "#553a02",
+          "#7b5607",
+          "#a27419",
+          "#cb9323",
+          "#f3b953",
+          "#feecd0"
+        ]
+      },
+      "dark-chart-absent": {
+        "role": "tertiary",
+        "displayName": "Dark Chart Absent",
+        "canonical": "#e2546e",
+        "oklch": "oklch(64.1% 0.177 12.6)",
+        "tonalRamp": [
+          "#1e0005",
+          "#480316",
+          "#770d2b",
+          "#a91941",
+          "#d0435f",
+          "#f7677f",
+          "#fdaab2",
+          "#fee8ea"
+        ]
+      },
+      "dark-chart-leave": {
+        "role": "tertiary",
+        "displayName": "Dark Chart Leave",
+        "canonical": "#4f82ec",
+        "oklch": "oklch(62.4% 0.169 263.1)",
+        "tonalRamp": [
+          "#00052c",
+          "#001962",
+          "#083397",
+          "#2755bb",
+          "#4577e0",
+          "#6a9bfe",
+          "#a7c4fd",
+          "#e7effe"
+        ]
+      },
+      "dark-leave-annual": {
+        "role": "tertiary",
+        "displayName": "Dark Leave Annual",
+        "canonical": "#5866d6",
+        "oklch": "oklch(55.9% 0.171 274.1)",
+        "tonalRamp": [
+          "#060032",
+          "#17056d",
+          "#2b2b97",
+          "#444ebb",
+          "#6070e1",
+          "#8194ff",
+          "#b2c0fe",
+          "#e9eeff"
+        ]
+      },
+      "dark-leave-casual": {
+        "role": "tertiary",
+        "displayName": "Dark Leave Casual",
+        "canonical": "#d55181",
+        "oklch": "oklch(62.2% 0.171 0.8)",
+        "tonalRamp": [
+          "#1d010a",
+          "#480121",
+          "#76063b",
+          "#a42058",
+          "#ca4677",
+          "#f06a98",
+          "#fca8c0",
+          "#fee8ed"
+        ]
+      },
+      "dark-leave-sick": {
+        "role": "tertiary",
+        "displayName": "Dark Leave Sick",
+        "canonical": "#1aa3c9",
+        "oklch": "oklch(66.5% 0.119 223.2)",
+        "tonalRamp": [
+          "#000d13",
+          "#012935",
+          "#054759",
+          "#0e6881",
+          "#018bad",
+          "#2eaed4",
+          "#5ed5fc",
+          "#d9f4fe"
+        ]
+      },
+      "dark-leave-other": {
+        "role": "tertiary",
+        "displayName": "Dark Leave Other",
+        "canonical": "#8a90b0",
+        "oklch": "oklch(66.0% 0.048 276.7)",
+        "tonalRamp": [
+          "#07081f",
+          "#1e223b",
+          "#393d59",
+          "#565b79",
+          "#757b9a",
+          "#969cbd",
+          "#bbc2e4",
+          "#eaeefe"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "figure-xl": {
+        "displayName": "Figure XL",
+        "purpose": "The live clock on the Today card; one per screen."
+      },
+      "figure-lg": {
+        "displayName": "Figure LG",
+        "purpose": "Reserved ramp step for a card's single dominant number."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Reserved ramp step for a card's single dominant number."
+      },
+      "figure-sm": {
+        "displayName": "Figure SM",
+        "purpose": "Counts, legend values, donut totals, leave day counts, shift times."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page header greeting or title; 1.75rem on phones, 2rem from sm."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Detail values, page descriptions (max 65ch), nav labels."
+      },
+      "body-sm": {
+        "displayName": "Body SM",
+        "purpose": "Tables, inputs, buttons, secondary card text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field, legend and nav group labels in Slate Ink; sentence case."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Day numbers under stitches and nav count pills."
+      }
+    },
+    "shadows": [
+      {
+        "name": "raised",
+        "value": "0 1px 2px hsl(var(--shadow-color) / 0.06), 0 2px 6px -2px hsl(var(--shadow-color) / 0.08)",
+        "purpose": "Resting cards, filled buttons, switch thumbs. --shadow-color is 228 40% 20% in light, 232 60% 2% in dark."
+      },
+      {
+        "name": "float",
+        "value": "0 4px 10px -2px hsl(var(--shadow-color) / 0.1), 0 16px 32px -8px hsl(var(--shadow-color) / 0.18)",
+        "purpose": "Popovers, tooltips, chart tooltips, menus, dialogs."
+      }
+    ],
+    "motion": [
+      {
+        "name": "stitch-in",
+        "value": "stitch-in 600ms cubic-bezier(0.16, 1, 0.3, 1) both",
+        "purpose": "Today's stitch pulled through: clip reveal left to right on settle; the shift seam's worked thread scales out on the same curve."
+      },
+      {
+        "name": "control-transition",
+        "value": "150ms ease-out",
+        "purpose": "Button colour, shadow and 1px press."
+      },
+      {
+        "name": "rail-collapse",
+        "value": "width 200ms ease-out",
+        "purpose": "Rail collapse between 252px and 76px."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "1ms",
+        "purpose": "All animation and transition durations under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "content-max",
+        "value": "1400px"
+      }
+    ],
+    "stitchLine": {
+      "utility": "stitch-line",
+      "value": "repeating-linear-gradient(90deg, var(--thread, var(--off)) 0 var(--stitch, 8px), transparent var(--stitch, 8px) calc(var(--stitch, 8px) + var(--gap, 6px)))",
+      "purpose": "A running stitch along a line; --thread sets colour, --stitch and --gap set rhythm."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled action on a card: indigo in light, marigold in dark.",
+      "html": "<button class=\"ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4\"/><path d=\"m10 17 5-5-5-5\"/><path d=\"M15 12H3\"/></svg>Check in</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:10px;font:500 14px/1 \"Anek Latin\",ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:background-color .15s ease-out,transform .15s ease-out;background:var(--primary,#1e2756);color:var(--primary-foreground,#fff);border:0;box-shadow:0 1px 2px hsl(228 40% 20% / .06),0 2px 6px -2px hsl(228 40% 20% / .08);}.ds-btn-primary:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f6f7fb),0 0 0 4px var(--ring,#4a57a8)}.ds-btn-primary:active{transform:translateY(1px)}.ds-btn-primary:hover{background:var(--primary-hover,#2a3570)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary actions such as Review or Check out.",
+      "html": "<button class=\"ds-btn-outline\">Review</button>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:10px;font:500 14px/1 \"Anek Latin\",ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:background-color .15s ease-out,transform .15s ease-out;background:var(--card,#fff);color:var(--foreground,#141a33);border:1px solid var(--input,#d3d7e5);}.ds-btn-outline:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f6f7fb),0 0 0 4px var(--ring,#4a57a8)}.ds-btn-outline:active{transform:translateY(1px)}.ds-btn-outline:hover{background:var(--accent,#e9ecf7)}"
+    },
+    {
+      "name": "Success Button",
+      "kind": "button",
+      "refersTo": "button-success",
+      "description": "Approve actions: deep present ink with white text.",
+      "html": "<button class=\"ds-btn-success\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6 9 17l-5-5\"/></svg>Approve</button>",
+      "css": ".ds-btn-success{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:10px;font:500 14px/1 \"Anek Latin\",ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:background-color .15s ease-out,transform .15s ease-out;background:var(--present-ink,#22704a);color:#fff;border:0;box-shadow:0 1px 2px hsl(228 40% 20% / .06),0 2px 6px -2px hsl(228 40% 20% / .08);}.ds-btn-success:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f6f7fb),0 0 0 4px var(--ring,#4a57a8)}.ds-btn-success:active{transform:translateY(1px)}.ds-btn-success:hover{background:color-mix(in oklab,var(--present-ink,#22704a) 90%,transparent)}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "40px field on white with an indigo focus border and soft ring.",
+      "html": "<input class=\"ds-input\" placeholder=\"Reason for leave\">",
+      "css": ".ds-input{height:40px;width:260px;padding:8px 12px;border:1px solid var(--input,#d3d7e5);border-radius:10px;background:var(--card,#fff);color:var(--foreground,#141a33);font:400 14px \"Anek Latin\",ui-sans-serif,system-ui,sans-serif;outline:none;transition:border-color .15s,box-shadow .15s}.ds-input::placeholder{color:var(--muted-foreground,#545b78)}.ds-input:focus-visible{border-color:var(--ring,#4a57a8);box-shadow:0 0 0 3px color-mix(in oklab,var(--ring,#4a57a8) 20%,transparent)}"
+    },
+    {
+      "name": "Rail Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item-active",
+      "description": "Indigo rail items; the active one carries a marigold stitch at the edge.",
+      "html": "<nav class=\"ds-rail\"><p class=\"ds-rail-group\">Team</p><a class=\"ds-rail-item ds-active\" href=\"#\"><span class=\"ds-rail-mark\"></span>Dashboard</a><a class=\"ds-rail-item\" href=\"#\">Approvals<span class=\"ds-rail-count\">6</span></a><a class=\"ds-rail-item\" href=\"#\">Reports</a></nav>",
+      "css": ".ds-rail{display:grid;gap:2px;width:228px;padding:12px;background:var(--rail,#1e2756);font-family:\"Anek Latin\",ui-sans-serif,system-ui,sans-serif}.ds-rail-group{margin:0;padding:0 12px 6px;font-size:13px;font-weight:500;color:var(--rail-muted,#a1a9d4)}.ds-rail-item{position:relative;display:flex;align-items:center;height:40px;padding:0 12px;border-radius:12px;font-size:15px;color:color-mix(in oklab,var(--rail-foreground,#dce0f5) 85%,transparent);text-decoration:none;transition:background-color .15s}.ds-rail-item:hover{background:color-mix(in oklab,var(--rail-raised,#2a3570) 70%,transparent);color:#fff}.ds-rail-item:focus-visible{outline:none;box-shadow:0 0 0 2px var(--marigold,#f2b33d)}.ds-active{background:var(--rail-raised,#2a3570);color:#fff}.ds-rail-mark{position:absolute;left:0;top:50%;width:3px;height:20px;transform:translateY(-50%);border-radius:0 9999px 9999px 0;background:var(--marigold,#f2b33d)}.ds-rail-count{margin-left:auto;min-width:20px;padding:0 6px;border-radius:9999px;background:var(--marigold,#f2b33d);color:var(--marigold-foreground,#1e2756);font-size:11px;font-weight:700;line-height:20px;text-align:center;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Status Badges",
+      "kind": "chip",
+      "refersTo": "badge-pending",
+      "description": "Word plus thread swatch on a wash; pending is dashed in the leave hue.",
+      "html": "<span class=\"ds-badge ds-present\"><i class=\"ds-sw\"></i>Approved</span> <span class=\"ds-badge ds-pending\"><i class=\"ds-sw\"></i>Pending</span> <span class=\"ds-badge ds-absent\"><i class=\"ds-sw\"></i>Rejected</span>",
+      "css": ".ds-badge{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px;border-radius:9999px;font:600 12px \"Anek Latin\",ui-sans-serif,system-ui,sans-serif;white-space:nowrap}.ds-sw{display:block;width:10px;height:3px;border-radius:9999px}.ds-present{background:var(--present-wash,#e7f4ec);color:var(--present-ink,#22704a)}.ds-present .ds-sw{background:var(--present,#2f8f5b)}.ds-absent{background:var(--absent-wash,#faeae8);color:var(--absent-ink,#a42a21)}.ds-absent .ds-sw{background:var(--absent,#c8372d)}.ds-pending{background:var(--leave-wash,#e8f0fc);color:var(--leave-ink,#2257ad)}.ds-pending .ds-sw{background:repeating-linear-gradient(90deg,var(--leave,#2f6fd6) 0 3px,transparent 3px 5px)}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "White work surface: hairline border, Raised shadow, 16px corners.",
+      "html": "<div class=\"ds-card\"><h2 class=\"ds-card-title\">Today</h2><p class=\"ds-card-fig\">09:02</p><p class=\"ds-card-sub\">General shift 09:00–18:00 · grace until 09:15</p></div>",
+      "css": ".ds-card{width:300px;padding:24px;border:1px solid var(--border,#e3e6f0);border-radius:16px;background:var(--card,#fff);color:var(--card-foreground,#141a33);font-family:\"Anek Latin\",ui-sans-serif,system-ui,sans-serif;box-shadow:0 1px 2px hsl(228 40% 20% / .06),0 2px 6px -2px hsl(228 40% 20% / .08)}.ds-card-title{margin:0 0 16px;font-size:17px;font-weight:600;line-height:1.375}.ds-card-fig{margin:0;font-size:3rem;font-weight:600;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}.ds-card-sub{margin:8px 0 0;font-size:14px;color:var(--muted-foreground,#545b78)}"
+    },
+    {
+      "name": "Stitch Row",
+      "kind": "custom",
+      "refersTo": "stitch-row",
+      "description": "The month as one stitch per day: solid settled, dashed pending, hairline off; today marked in marigold.",
+      "html": "<ol class=\"ds-stitch-row\"><li class=\"ds-day\"><span class=\"ds-thread ds-p\"></span><span class=\"ds-num\">1</span></li><li class=\"ds-day\"><span class=\"ds-thread ds-p\"></span><span class=\"ds-num\">2</span></li><li class=\"ds-day\"><span class=\"ds-thread ds-o\"></span><span class=\"ds-num\">3</span></li><li class=\"ds-day\"><span class=\"ds-thread ds-o\"></span><span class=\"ds-num\">4</span></li><li class=\"ds-day\"><span class=\"ds-thread ds-p\"></span><span class=\"ds-num\">5</span></li><li class=\"ds-day\"><span class=\"ds-thread ds-l\"></span><span class=\"ds-num\">6</span></li><li class=\"ds-day\"><span class=\"ds-thread ds-v\"></span><span class=\"ds-num\">7</span></li><li class=\"ds-day ds-today\"><span class=\"ds-thread ds-p\"></span><span class=\"ds-num\">8</span></li><li class=\"ds-day\"><span class=\"ds-thread ds-b\"></span><span class=\"ds-num\">9</span></li><li class=\"ds-day\"><span class=\"ds-thread ds-b\"></span><span class=\"ds-num\">10</span></li></ol>",
+      "css": ".ds-stitch-row{display:grid;grid-template-columns:repeat(10,28px);gap:4px;margin:0;padding:8px;list-style:none;font-family:\"Anek Latin\",ui-sans-serif,system-ui,sans-serif}.ds-day{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;padding:6px 0;border-radius:10px}.ds-day:hover{background:var(--accent,#e9ecf7)}.ds-thread{display:block;width:100%;height:3px;border-radius:9999px}.ds-p{background:var(--present,#2f8f5b)}.ds-l{background:var(--late,#d9971c)}.ds-v{background:repeating-linear-gradient(90deg,var(--leave,#2f6fd6) 0 4px,transparent 4px 7px)}.ds-o{height:1px;background:var(--off,#c9cddb)}.ds-b{height:1px;background:repeating-linear-gradient(90deg,var(--off,#c9cddb) 0 3px,transparent 3px 6px)}.ds-num{font-size:11px;line-height:1;color:var(--muted-foreground,#545b78);font-variant-numeric:tabular-nums}.ds-today .ds-num{font-weight:700;color:var(--foreground,#141a33)}.ds-today::after{content:\"\";position:absolute;bottom:-8px;left:50%;width:4px;height:4px;transform:translateX(-50%);border-radius:9999px;background:var(--marigold,#f2b33d)}"
+    },
+    {
+      "name": "Quota Stitch",
+      "kind": "custom",
+      "refersTo": "quota-stitch",
+      "description": "A leave quota, one stitch per day: available solid, pending dashed, used hairline.",
+      "html": "<div class=\"ds-quota\"><span class=\"ds-q ds-qf\"></span><span class=\"ds-q ds-qf\"></span><span class=\"ds-q ds-qf\"></span><span class=\"ds-q ds-qf\"></span><span class=\"ds-q ds-qf\"></span><span class=\"ds-q ds-qf\"></span><span class=\"ds-q ds-qf\"></span><span class=\"ds-q ds-qp\"></span><span class=\"ds-q ds-qp\"></span><span class=\"ds-q ds-qu\"></span><span class=\"ds-q ds-qu\"></span></div>",
+      "css": ".ds-quota{display:flex;align-items:center;gap:3px;width:280px;height:3px;--lt:var(--lt-al,#4457c9)}.ds-q{flex:1;min-width:0;border-radius:9999px}.ds-qf{height:3px;background:var(--lt)}.ds-qp{height:3px;background:repeating-linear-gradient(90deg,var(--lt) 0 3px,transparent 3px 5px)}.ds-qu{height:1px;background:var(--off,#c9cddb)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Running Stitch",
+    "overview": "Every working day is a stitch. Attendance, shift windows and leave quotas are drawn as rows of short rounded threads, the way a nakshi kantha is sewn: a month reads at a glance as one stitched row, a shift as a seam pulled through the day, a quota as stitches still to be used. The stitch carries state through its form as well as its hue: a solid stitch is final, a dashed stitch is pending, a hairline is a day off or a day already spent. Colour is never the only carrier.\n\nThe world is an indigo-dyed shell on cool cotton. A deep indigo rail holds navigation; the working ground is a cool, faintly blue off-white (never cream); work happens on white cards with hairline rules and a barely-there lift. Status colours behave as thread, not as fills: they appear as thin marks, as accessible ink on a pale wash, and as chart series, each in its own validated step. One marigold is the needle: the active-nav stitch, today's dot, the head of the \"now\" needle, waiting counts. Dark mode re-dyes the same cloth indigo-black, brightens the threads, and lets marigold take over as the primary action colour.\n\nDensity is that of a working tool: one workhorse family (Anek Latin), compact 13 to 17px text, and a fixed figure ramp so that the one number that matters on a card (the clock, a count, a day total) clearly outranks everything near it. The category default this world refuses is the slate dashboard of identical KPI cards with a single blue accent.",
+    "keyCharacteristics": [
+      "Indigo rail and indigo primary on a cool cotton ground; white cards with hairline borders.",
+      "Status as thread: mark, ink and wash per status, never a raw hex in a component.",
+      "Solid = final, dashed = pending, hairline = off or used; state lives in the stitch's form.",
+      "One marigold needle, used sparingly for \"you are here\" and \"waiting\" moments.",
+      "Anek Latin throughout; tabular figures for every time, date number and count.",
+      "A 4px stitch module; month grids reflow by whole cells."
+    ],
+    "rules": [
+      {
+        "name": "The Thread Rule",
+        "body": "Status colour is drawn as thread: marks use the thread token, text uses the ink token on its wash. Components reference roles (CSS variables), never raw hex.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dashed-Is-Pending Rule",
+        "body": "Pending is always a dashed thread in its own hue; a pending leave request is drawn dashed in the leave hue, never amber. Amber means late, and only late.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Needle Rule",
+        "body": "Marigold marks \"you are here\" and \"waiting\": the active nav stitch, today, the now-needle, counts, selection. It is never a fill for cards, charts or status.",
+        "section": "colors"
+      },
+      {
+        "name": "The Separate Steps Rule",
+        "body": "Charts use the validated chart steps and leave types use their identity hues; neither borrows the thread tokens directly, and a new series or leave type must be re-validated in both themes before it ships.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Every time, date number, count and day total is set with tabular figures, so columns of numbers and a ticking clock never jitter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Fixed Figure Ramp Rule",
+        "body": "Figures take a step from the fixed ramp (1.5, 2, 3, 4.5rem), never a fluid clamp; the one number that matters on a card outranks everything near it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Today-First Rule",
+        "body": "On a phone, the first screen belongs to today: the clock, the shift, and the one check-in or check-out action.",
+        "section": "layout"
+      },
+      {
+        "name": "The Whole-Cell Rule",
+        "body": "Day grids reflow by whole stitches, never by squeezing or truncating a day.",
+        "section": "layout"
+      },
+      {
+        "name": "The Hairline-and-Lift Rule",
+        "body": "A card is a hairline plus Raised, nothing heavier. Float is only for things that sit above the page.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do express status through a stitch's form as well as its hue: solid for final, dashed for pending, hairline for off or used.",
+      "Do draw every pending request as a dashed thread in the leave hue.",
+      "Do pair every colour mark with a word: badges, legends and chart tooltips always carry a label.",
+      "Do use tabular figures for every time, date number and count, and take figure sizes from the fixed ramp.",
+      "Do keep cards to a one-pixel hairline plus the Raised shadow on Card White over Cotton Ground.",
+      "Do use the validated chart steps for status series and the leave-type identity hues for leave types, and re-validate before adding a series.",
+      "Do give the phone's first screen to the Today card."
+    ],
+    "donts": [
+      "Don't colour pending amber; amber is lateness only.",
+      "Don't use raw hex in components; reference the role variables so both themes follow.",
+      "Don't spread marigold beyond the needle moments (active nav, today, now, counts, selection), except as the dark-mode primary.",
+      "Don't warm the ground toward cream; the cotton is cool.",
+      "Don't add a second type family or a fluid clamp for figures.",
+      "Don't build screens from rows of identical KPI cards with one blue accent.",
+      "Don't reuse the bright dark-mode threads as chart series; the dark chart steps were chosen separately."
+    ]
+  }
+}

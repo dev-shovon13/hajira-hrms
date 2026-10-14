@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Monochrome Product</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAFAFA;--ink:#0A0A0A;--mut:#71717A;--line:#E7E7EA;--acc:#5B5BD6;--present:#2F8F5B;--late:#D9971C;--absent:#C8372D;--leave:#2F6FD6}
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:Geist,system-ui,sans-serif;background:var(--bg);color:var(--ink);display:grid;grid-template-columns:220px 1fr;font-size:14px}
+aside{border-right:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:2px}
+.ws{display:flex;gap:8px;align-items:center;font-weight:600;padding:6px 8px 18px}.ws i{width:20px;height:20px;border-radius:5px;background:var(--ink)}
+aside a{padding:7px 8px;border-radius:6px;color:var(--mut)}aside a.on{background:#EFEFF1;color:var(--ink)}
+aside small{color:var(--mut);font-size:12px;padding:16px 8px 4px}
+main{padding:0 32px}
+.top{height:56px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.top .crumb{color:var(--mut)}.top .sp{flex:1}.k{height:32px;border:1px solid var(--line);border-radius:6px;padding:0 10px;display:flex;align-items:center;color:var(--mut);background:#fff}
+.hero{display:flex;justify-content:space-between;align-items:flex-end;padding:32px 0 24px}
+.hero h1{font-size:24px;font-weight:600;letter-spacing:-.01em}.hero p{color:var(--mut);margin-top:4px}
+.ck{display:flex;align-items:center;gap:16px}.ck .t{font-size:40px;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.ck button{height:40px;padding:0 18px;border:0;border-radius:8px;background:var(--acc);color:#fff;font:500 14px Geist}
+.ck .g{height:40px;padding:0 16px;border:1px solid var(--line);border-radius:8px;background:#fff;display:flex;align-items:center}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:10px;background:#fff}
+.kpi{padding:18px 20px;border-right:1px solid var(--line)}.kpi:last-child{border:0}
+.kpi span{color:var(--mut);display:flex;align-items:center;gap:6px}.kpi span:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c)}
+.kpi b{display:block;font-size:30px;font-weight:500;margin-top:6px;font-variant-numeric:tabular-nums}
+.kpi svg{margin-top:8px}
+.two{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-top:16px}
+.p{border:1px solid var(--line);border-radius:10px;background:#fff}
+.p h3{font-size:14px;font-weight:500;padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.p h3 small{color:var(--mut);font-weight:400}
+table{width:100%;border-collapse:collapse}td,th{padding:10px 18px;text-align:left;border-bottom:1px solid var(--line)}th{color:var(--mut);font-weight:400;font-size:13px}
+td.n{font-variant-numeric:tabular-nums;color:var(--mut)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 8px}.chip:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c)}
+.bl{padding:6px 18px 14px}.bl div{display:grid;grid-template-columns:80px 1fr 56px;gap:12px;align-items:center;padding:10px 0}
+.bl i{height:4px;border-radius:2px;background:#EFEFF1;position:relative;overflow:hidden}.bl i:after{content:"";position:absolute;inset:0;width:var(--w);background:var(--ink)}
+.bl b{font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
+</style></head><body>
+<aside><div class="ws"><i></i>Hajira</div><a class="on">Dashboard</a><a>Attendance</a><a>Leave</a><a>Calendar</a><a>Holidays</a><small>Requests</small><a>Regularization</a><a>Inbox</a></aside>
+<main>
+  <div class="top"><span class="crumb">Home /</span> Dashboard<div class="sp"></div><div class="k">Search ⌘K</div><div class="k">3</div><div class="k">NJ</div></div>
+  <div class="hero"><div><h1>Good morning, Nusrat</h1><p>Wed 14 Oct · Morning shift 09:00–18:00 · grace 15m</p></div>
+    <div class="ck"><div class="t">08:52:14</div><div class="g">Not checked in</div><button>Check in</button></div></div>
+  <div class="kpis">
+    <div class="kpi" style="--c:var(--present)"><span>Present</span><b>5</b><svg width="140" height="24"><polyline fill="none" stroke="#0A0A0A" stroke-width="1.5" points="0,18 20,14 40,16 60,8 80,10 100,6 120,9 140,4"/></svg></div>
+    <div class="kpi" style="--c:var(--late)"><span>Late</span><b>2</b><svg width="140" height="24"><polyline fill="none" stroke="#0A0A0A" stroke-width="1.5" points="0,20 20,20 40,12 60,20 80,20 100,20 120,10 140,20"/></svg></div>
+    <div class="kpi" style="--c:var(--absent)"><span>Absent</span><b>1</b><svg width="140" height="24"><polyline fill="none" stroke="#0A0A0A" stroke-width="1.5" points="0,20 40,20 60,20 80,20 100,6 120,20 140,20"/></svg></div>
+    <div class="kpi" style="--c:var(--leave)"><span>On leave</span><b>1</b><svg width="140" height="24"><polyline fill="none" stroke="#0A0A0A" stroke-width="1.5" points="0,20 40,20 60,6 80,20 140,20"/></svg></div>
+  </div>
+  <div class="two">
+    <div class="p"><h3>Recent days <small>View all</small></h3><table><tr><th>Date</th><th>In</th><th>Out</th><th>Hours</th><th>Status</th></tr>
+      <tr><td>Tue 13 Oct</td><td class="n">08:54</td><td class="n">18:06</td><td class="n">9h 12m</td><td><span class="chip" style="--c:var(--present)">Present</span></td></tr>
+      <tr><td>Mon 12 Oct</td><td class="n">09:27</td><td class="n">18:30</td><td class="n">9h 03m</td><td><span class="chip" style="--c:var(--late)">Late · 12m</span></td></tr>
+      <tr><td>Sun 11 Oct</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td><span class="chip" style="--c:var(--absent)">Absent</span></td></tr>
+      <tr><td>Thu 8 Oct</td><td class="n">08:58</td><td class="n">18:02</td><td class="n">9h 04m</td><td><span class="chip" style="--c:var(--present)">Present</span></td></tr>
+      <tr><td>Wed 7 Oct</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td><span class="chip" style="--c:var(--leave)">Casual leave</span></td></tr></table></div>
+    <div class="p"><h3>Leave balance <small>2026</small></h3><div class="bl">
+      <div><span>Casual</span><i style="--w:70%"></i><b>7/10</b></div><div><span>Sick</span><i style="--w:86%"></i><b>12/14</b></div><div><span>Annual</span><i style="--w:56%"></i><b>9/16</b></div><div><span>Unpaid</span><i style="--w:0%"></i><b>—</b></div></div></div>
+  </div>
+</main>
+</body></html>

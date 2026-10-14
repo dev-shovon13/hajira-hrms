@@ -1,0 +1,363 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Running Stitch: an indigo-dyed shell on cool cotton, status colours as thread.
+ * Every colour below is a role; components never use raw hex.
+ */
+:root {
+  --radius: 0.75rem;
+
+  --background: #f6f7fb;
+  --foreground: #141a33;
+  --card: #ffffff;
+  --card-foreground: #141a33;
+  --popover: #ffffff;
+  --popover-foreground: #141a33;
+  --primary: #1e2756;
+  --primary-foreground: #ffffff;
+  --primary-hover: #2a3570;
+  --secondary: #eef0f7;
+  --secondary-foreground: #1e2756;
+  --muted: #eef0f7;
+  --muted-foreground: #545b78;
+  --accent: #e9ecf7;
+  --accent-foreground: #1e2756;
+  --destructive: #c8372d;
+  --destructive-foreground: #ffffff;
+  --border: #e3e6f0;
+  --input: #d3d7e5;
+  --ring: #4a57a8;
+
+  /* shell */
+  --rail: #1e2756;
+  --rail-raised: #2a3570;
+  --rail-foreground: #dce0f5;
+  --rail-muted: #a1a9d4;
+  --rail-border: #343f7c;
+  --marigold: #f2b33d;
+  --marigold-foreground: #1e2756;
+
+  /* thread: marks (stitches, chart series) */
+  --present: #2f8f5b;
+  --late: #d9971c;
+  --absent: #c8372d;
+  --leave: #2f6fd6;
+  --holiday: #7a4cc2;
+  --halfday: #0e8a8a;
+  --off: #c9cddb;
+  /* thread: text on light surfaces (AA contrast) */
+  --present-ink: #22704a;
+  --late-ink: #8f5d07;
+  --absent-ink: #a42a21;
+  --leave-ink: #2257ad;
+  --holiday-ink: #6240a1;
+  --halfday-ink: #0a6a6a;
+  --present-wash: #e7f4ec;
+  --late-wash: #fbf1dd;
+  --absent-wash: #faeae8;
+  --leave-wash: #e8f0fc;
+  --holiday-wash: #f1ebfa;
+  --halfday-wash: #e2f3f3;
+
+  --shadow-color: 228 40% 20%;
+
+  /* Chart series (validated: scripts/validate_palette.js, light surface #fff). */
+  --chart-present: #2f8f5b;
+  --chart-late: #d9971c;
+  --chart-absent: #c8372d;
+  --chart-leave: #2f6fd6;
+  --chart-grid: #e3e6f0;
+  /* Leave-type identity (see lib/leave-colors.ts): validated together, clear of every status thread. */
+  --lt-al: #4457c9;
+  --lt-cl: #d55181;
+  --lt-sl: #1f9fd0;
+  --lt-other: #7c829c;
+}
+
+.dark {
+  --background: #0e1124;
+  --foreground: #e7e9f5;
+  --card: #151935;
+  --card-foreground: #e7e9f5;
+  --popover: #181c3c;
+  --popover-foreground: #e7e9f5;
+  --primary: #f2b33d;
+  --primary-foreground: #1a1d3a;
+  --primary-hover: #f6c463;
+  --secondary: #1d2246;
+  --secondary-foreground: #e7e9f5;
+  --muted: #1d2246;
+  --muted-foreground: #a6acce;
+  --accent: #222852;
+  --accent-foreground: #e7e9f5;
+  --destructive: #ef6a5e;
+  --destructive-foreground: #1a0b09;
+  --border: #262c55;
+  --input: #323966;
+  --ring: #8f9bff;
+
+  --rail: #0a0d1e;
+  --rail-raised: #1a1f44;
+  --rail-foreground: #dce0f5;
+  --rail-muted: #9aa2cf;
+  --rail-border: #1f2550;
+  --marigold: #f2b33d;
+  --marigold-foreground: #1a1d3a;
+
+  --present: #4fbf85;
+  --late: #f0b44a;
+  --absent: #ef6a5e;
+  --leave: #6fa0ff;
+  --holiday: #a988f0;
+  --halfday: #3cc2c2;
+  --off: #3a4070;
+  --present-ink: #6fd29f;
+  --late-ink: #f3c26a;
+  --absent-ink: #f48c82;
+  --leave-ink: #93b7ff;
+  --holiday-ink: #c0a6f6;
+  --halfday-ink: #6dd6d6;
+  --present-wash: #14302a;
+  --late-wash: #33291a;
+  --absent-wash: #3a1d22;
+  --leave-wash: #172848;
+  --holiday-wash: #2a2048;
+  --halfday-wash: #10302f;
+
+  --shadow-color: 232 60% 2%;
+
+  /* Dark steps chosen separately and validated against #151935 (L 0.48–0.67). */
+  --chart-present: #33a06a;
+  --chart-late: #c0880e;
+  --chart-absent: #e2546e;
+  --chart-leave: #4f82ec;
+  --chart-grid: #262c55;
+  --lt-al: #5866d6;
+  --lt-cl: #d55181;
+  --lt-sl: #1aa3c9;
+  --lt-other: #8a90b0;
+}
+
+@theme inline {
+  --font-sans: var(--font-anek), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-rail: var(--rail);
+  --color-rail-raised: var(--rail-raised);
+  --color-rail-foreground: var(--rail-foreground);
+  --color-rail-muted: var(--rail-muted);
+  --color-rail-border: var(--rail-border);
+  --color-marigold: var(--marigold);
+  --color-marigold-foreground: var(--marigold-foreground);
+
+  --color-present: var(--present);
+  --color-late: var(--late);
+  --color-absent: var(--absent);
+  --color-leave: var(--leave);
+  --color-holiday: var(--holiday);
+  --color-halfday: var(--halfday);
+  --color-off: var(--off);
+  --color-present-ink: var(--present-ink);
+  --color-late-ink: var(--late-ink);
+  --color-absent-ink: var(--absent-ink);
+  --color-leave-ink: var(--leave-ink);
+  --color-holiday-ink: var(--holiday-ink);
+  --color-halfday-ink: var(--halfday-ink);
+  --color-present-wash: var(--present-wash);
+  --color-late-wash: var(--late-wash);
+  --color-absent-wash: var(--absent-wash);
+  --color-leave-wash: var(--leave-wash);
+  --color-holiday-wash: var(--holiday-wash);
+  --color-halfday-wash: var(--halfday-wash);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Fixed figure ramp: the one number that matters outranks everything near it. */
+  --text-figure-sm: 1.5rem;
+  --text-figure-sm--line-height: 1.1;
+  --text-figure: 2rem;
+  --text-figure--line-height: 1.05;
+  --text-figure-lg: 3rem;
+  --text-figure-lg--line-height: 1;
+  --text-figure-xl: 4.5rem;
+  --text-figure-xl--line-height: 1;
+
+  --shadow-raised: 0 1px 2px hsl(var(--shadow-color) / 0.06), 0 2px 6px -2px hsl(var(--shadow-color) / 0.08);
+  --shadow-float: 0 4px 10px -2px hsl(var(--shadow-color) / 0.1), 0 16px 32px -8px hsl(var(--shadow-color) / 0.18);
+
+  --animate-stitch-in: stitch-in 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  @keyframes stitch-in {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scrollbar-color: color-mix(in oklab, var(--muted-foreground) 45%, transparent) transparent;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: 'kern', 'calt';
+    -webkit-font-smoothing: antialiased;
+    caret-color: var(--ring);
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--marigold) 45%, transparent);
+    color: var(--foreground);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  a {
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--muted-foreground) 35%, transparent);
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in oklab, var(--muted-foreground) 60%, transparent);
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* A running stitch: dashes of thread along a line. --thread sets the colour. */
+@utility stitch-line {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--thread, var(--off)) 0 var(--stitch, 8px),
+    transparent var(--stitch, 8px) calc(var(--stitch, 8px) + var(--gap, 6px))
+  );
+  background-repeat: no-repeat;
+}
+
+/* nprogress-style top loader colour */
+#nprogress .bar {
+  background: var(--marigold) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* FullCalendar, dressed in the same thread */
+.fc {
+  --fc-border-color: var(--border);
+  --fc-page-bg-color: var(--card);
+  --fc-neutral-bg-color: var(--muted);
+  --fc-today-bg-color: var(--accent);
+  --fc-event-border-color: transparent;
+  --fc-button-bg-color: var(--card);
+  --fc-button-border-color: var(--border);
+  --fc-button-text-color: var(--foreground);
+  --fc-button-hover-bg-color: var(--accent);
+  --fc-button-hover-border-color: var(--border);
+  --fc-button-active-bg-color: var(--primary);
+  --fc-button-active-border-color: var(--primary);
+  --fc-list-event-hover-bg-color: var(--accent);
+  font-size: 0.875rem;
+}
+.fc .fc-toolbar-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+.fc .fc-button {
+  font-weight: 500;
+  text-transform: none;
+  border-radius: calc(var(--radius) - 4px);
+  padding: 0.35rem 0.75rem;
+  box-shadow: none !important;
+}
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  color: var(--primary-foreground);
+}
+.fc .fc-col-header-cell-cushion,
+.fc .fc-daygrid-day-number {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+.fc .fc-day-today .fc-daygrid-day-number {
+  color: var(--foreground);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--marigold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.fc .fc-daygrid-event {
+  border-radius: 4px;
+  font-size: 0.75rem;
+  padding: 1px 4px;
+}
+.fc-theme-standard .fc-scrollgrid {
+  border-radius: var(--radius);
+  overflow: hidden;
+}

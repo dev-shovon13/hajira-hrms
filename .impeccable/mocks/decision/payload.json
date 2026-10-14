@@ -1,0 +1,133 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned Running Stitch. Keep it, take an alternate, or re-roll. Every option keeps the brief's pins: shadcn/ui, green/amber/red/blue/purple status colours, light + dark, split-screen auth.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Running Stitch",
+      "kicker": "THE ROLL",
+      "lineage": "Nakshi kantha, the running-stitch quilt of Bengal",
+      "thesis": "Every working day is a stitch; a month of attendance reads like a kantha row.",
+      "palette": ["#1E2756", "#F6F7FB", "#2F8F5B", "#D9971C", "#C8372D", "#2F6FD6", "#7A4CC2"],
+      "materials": ["running stitch as the data mark", "indigo-dyed shell", "status colours as thread"],
+      "viewport": "Indigo nav rail; today's card with live clock and one Check-in action; the month below as a stitched row of 31 days in status thread; balances as stitched quotas.",
+      "risk": "Folk craft tips into costume if stitches leave the data; they stay on data marks only.",
+      "raised": [
+        { "from": "challenger-emission", "raise": "State lives in stitch form too: solid is final, dashed is pending, struck is cancelled. Colour never works alone." },
+        { "from": "challenger-feed", "raise": "On a phone, check-in owns the whole first screen: clock, shift, one action." },
+        { "from": "challenger-atlas", "raise": "Figures sit on a fixed size ramp, so the day's one number outranks everything near it." },
+        { "from": "challenger-crouwel", "raise": "Everything snaps to a 4px stitch module, and grids reflow by whole cells." },
+        { "from": "challenger-centrerail", "raise": "Rules are drawn at one device pixel: three ink values plus the thread colours, nothing else." }
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html"
+    },
+    {
+      "id": "model-pick",
+      "label": "Line 6",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Dhaka Metro Rail wayfinding",
+      "thesis": "The workday is a metro line: shift start, grace and check-out are stations you pass on time or late.",
+      "palette": ["#FFFFFF", "#0F1B2D", "#006A4E", "#F2B705", "#D7263D"],
+      "materials": ["station dots on a line", "bilingual wayfinding signage", "platform-screen numerals"],
+      "viewport": "Top bar with navigation; today's line runs across the full width with stations at 9:00, 9:15 grace, and you; the month sits below as a station index.",
+      "risk": "Familiar: a timeline-as-transit-map is where many runs land, and it can read as a stock stepper.",
+      "html": ".impeccable/mocks/decision/model-pick.html"
+    },
+    {
+      "id": "challenger-mono",
+      "label": "Monochrome Product",
+      "verdict": "competitive",
+      "lineage": "monochrome software-product canon",
+      "thesis": "An almost colourless instrument where the status colours are the only colour on the screen.",
+      "palette": ["#FAFAFA", "#0A0A0A", "#71717A", "#5B5BD6"],
+      "materials": ["fine neutral scale", "hairline-bordered ghost controls"],
+      "viewport": "Narrow grey sidebar; dense KPI strip; check-in as a solid accent button; every number paired with a sparkline as proof.",
+      "case": "Fuses cleanly, and reviewers know this polish. It loses on audience identity: nothing about it belongs to this office.",
+      "risk": "Reads as a well-made clone of every SaaS dashboard.",
+      "html": ".impeccable/mocks/decision/challenger-mono.html",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-monochrome-product-marketing-hero.webp"
+    },
+    {
+      "id": "challenger-emission",
+      "label": "Emission-Line Rail",
+      "verdict": "declined",
+      "lineage": "glass spectrogram plates",
+      "thesis": "State carried by line height, dash and doubling on a charcoal continuum.",
+      "palette": ["#1B1C1F", "#E9E4D8", "#F2C14E"],
+      "materials": ["hairline emission lines", "charcoal continuum"],
+      "viewport": "One off-centre rail with every destination as a tick.",
+      "case": "Fuses poorly: office staff don't read spectrograms, and hue-free state fights the pinned status colours.",
+      "risk": "Unreadable as an HR tool.",
+      "kept": "State is carried in line form (solid, dashed, struck), not by hue alone.",
+      "hero": "https://impeccable.style/worlds/cards/operate-c-emission-line-rail-hero.webp"
+    },
+    {
+      "id": "challenger-feed",
+      "label": "Vertical Feed",
+      "verdict": "declined",
+      "lineage": "full-bleed vertical video feeds",
+      "thesis": "One item owns the whole viewport, and the next is a snap away.",
+      "palette": ["#000000", "#FFFFFF"],
+      "materials": ["full-bleed media", "glyph rail"],
+      "viewport": "One record per screen with an action rail.",
+      "case": "Fuses poorly: attendance data is tabular and comparative, not one item at a time.",
+      "risk": "Breaks scanability.",
+      "kept": "On a phone, check-in owns the whole first screen with one action.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-vertical-video-feed-surface-hero.webp"
+    },
+    {
+      "id": "challenger-atlas",
+      "label": "Star Atlas",
+      "verdict": "declined",
+      "lineage": "celestial chart plates",
+      "thesis": "Importance as dot magnitude on a coordinate field.",
+      "palette": ["#0D1B3D", "#F4F1E8", "#E0533D"],
+      "materials": ["magnitude dots", "coordinate grid"],
+      "viewport": "Employees plotted as stars by department.",
+      "case": "Fuses poorly: a night-sky chart has nothing to say about an office day.",
+      "risk": "Decorative where it should be legible.",
+      "kept": "Hierarchy on a fixed magnitude ramp: figures sized by importance, never ad hoc.",
+      "hero": "https://impeccable.style/worlds/cards/notation-diagram-systems-star-atlas-hero.webp"
+    },
+    {
+      "id": "challenger-crouwel",
+      "label": "Grid Specimen",
+      "verdict": "declined",
+      "lineage": "Wim Crouwel grid-constructed type",
+      "thesis": "Letterforms and layout built cell by cell on a visible grid.",
+      "palette": ["#FFFFFF", "#111111", "#1E5BFF"],
+      "materials": ["construction grid", "cell-built numerals"],
+      "viewport": "A grid-built clock as a poster.",
+      "case": "Fuses poorly: a poster's monumentality competes with dense working tables.",
+      "risk": "Poster, not product.",
+      "kept": "One strict module that every element snaps to.",
+      "hero": "https://impeccable.style/worlds/cards/crouwel-grid-specimen-hero.webp"
+    },
+    {
+      "id": "challenger-centrerail",
+      "label": "Centre-Rail Setting",
+      "verdict": "declined",
+      "lineage": "wide-margin reference editions",
+      "thesis": "Twin text columns around a rail of keys, drawn by a ruling engine.",
+      "palette": ["#1A1A1A", "#EDE6D6", "#C23B22"],
+      "materials": ["one-device-pixel rules", "vermilion keys"],
+      "viewport": "Two narrow columns with a keyed centre rail.",
+      "case": "Fuses poorly: a reading edition is the wrong form for approvals and check-ins.",
+      "risk": "Reads as a book, not a tool.",
+      "kept": "Rule discipline: hairlines at one device pixel and very few ink values.",
+      "hero": "https://impeccable.style/worlds/cards/rw-centre-rail-reference-setting-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "A stock shadcn/ui admin dashboard, executed impeccably.",
+    "palette": ["#FFFFFF", "#0F172A", "#64748B", "#2563EB"],
+    "materials": ["slate neutrals", "KPI cards", "collapsible sidebar"],
+    "viewport": "White sidebar, top bar with search, a row of four KPI cards, then a chart and a table.",
+    "risk": "Indistinguishable from every other HR dashboard, by design.",
+    "html": ".impeccable/mocks/decision/canon.html"
+  },
+  "steer": true
+}

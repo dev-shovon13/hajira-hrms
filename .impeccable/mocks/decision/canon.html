@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Category standard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F8FAFC;--ink:#0F172A;--mut:#64748B;--line:#E2E8F0;--blue:#2563EB;--present:#16A34A;--late:#D97706;--absent:#DC2626;--leave:#2563EB}
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);display:grid;grid-template-columns:256px 1fr;font-size:14px}
+aside{background:#fff;border-right:1px solid var(--line);padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+.lg{font-weight:700;font-size:18px;padding:0 8px 20px;display:flex;gap:8px;align-items:center}.lg i{width:28px;height:28px;border-radius:8px;background:var(--blue)}
+aside a{padding:9px 12px;border-radius:8px;color:var(--mut);font-weight:500}aside a.on{background:#EFF6FF;color:var(--blue)}
+main{display:flex;flex-direction:column}
+.top{height:64px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 32px}
+.top input{width:360px;height:38px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font:14px Inter}.top .sp{flex:1}
+.ib{width:38px;height:38px;border:1px solid var(--line);border-radius:8px}.av{width:38px;height:38px;border-radius:50%;background:#CBD5E1}
+.c{padding:28px 32px}
+h1{font-size:24px;font-weight:700}.c>p{color:var(--mut);margin-top:4px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.card span{color:var(--mut);font-weight:500}.card b{display:block;font-size:30px;margin-top:8px}.card em{font-style:normal;font-size:13px;color:var(--present)}
+.ci{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.clock{display:flex;justify-content:space-between;align-items:center}.clock b{font-size:44px;font-variant-numeric:tabular-nums}
+.btn{height:44px;padding:0 22px;border-radius:8px;border:0;background:var(--blue);color:#fff;font:600 15px Inter}
+h3{font-size:16px;font-weight:600;margin-bottom:12px}
+.chart{height:150px;display:flex;align-items:flex-end;gap:10px;padding-top:10px}.chart i{flex:1;background:#BFDBFE;border-radius:4px 4px 0 0}
+table{width:100%;border-collapse:collapse}th,td{padding:10px 8px;text-align:left;border-bottom:1px solid var(--line)}th{color:var(--mut);font-weight:500;font-size:13px}
+.bd{font-size:12px;font-weight:600;padding:3px 8px;border-radius:999px;background:var(--b);color:var(--c)}
+</style></head><body>
+<aside><div class="lg"><i></i>Hajira</div><a class="on">Dashboard</a><a>Attendance</a><a>Leave</a><a>Team Calendar</a><a>Holidays</a><a>Regularization</a><a>Settings</a></aside>
+<main>
+  <div class="top"><input placeholder="Search…"><div class="sp"></div><div class="ib"></div><div class="ib"></div><div class="av"></div></div>
+  <div class="c">
+    <h1>Dashboard</h1><p>Welcome back, Nusrat Jahan</p>
+    <div class="cards">
+      <div class="card"><span>Present days</span><b>5</b><em>this month</em></div>
+      <div class="card"><span>Late</span><b>2</b><em style="color:var(--late)">this month</em></div>
+      <div class="card"><span>Absent</span><b>1</b><em style="color:var(--absent)">this month</em></div>
+      <div class="card"><span>Leave balance</span><b>28</b><em style="color:var(--mut)">days left</em></div>
+    </div>
+    <div class="ci">
+      <div class="card"><h3>Today</h3><div class="clock"><div><b>08:52:14</b><p style="color:var(--mut)">Shift 09:00 – 18:00</p></div><button class="btn">Check In</button></div></div>
+      <div class="card"><h3>Weekly hours</h3><div class="chart"><i style="height:80%"></i><i style="height:90%"></i><i style="height:40%"></i><i style="height:85%"></i><i style="height:88%"></i></div></div>
+    </div>
+    <div class="card" style="margin-top:16px"><h3>Recent attendance</h3><table><tr><th>Date</th><th>Check in</th><th>Check out</th><th>Status</th></tr>
+      <tr><td>13 Oct 2026</td><td>08:54</td><td>18:06</td><td><span class="bd" style="--b:#DCFCE7;--c:#15803D">Present</span></td></tr>
+      <tr><td>12 Oct 2026</td><td>09:27</td><td>18:30</td><td><span class="bd" style="--b:#FEF3C7;--c:#B45309">Late</span></td></tr>
+      <tr><td>11 Oct 2026</td><td>—</td><td>—</td><td><span class="bd" style="--b:#FEE2E2;--c:#B91C1C">Absent</span></td></tr></table></div>
+  </div>
+</main>
+</body></html>

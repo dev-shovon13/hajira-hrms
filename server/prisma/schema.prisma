@@ -1,0 +1,471 @@
+// Hajira: attendance & leave management.
+// All instants are stored in UTC. Calendar dates (attendance day, leave range,
+// holiday) are office-local dates stored as @db.Date.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------- enums ----------
+
+enum Role {
+  EMPLOYEE
+  MANAGER
+  HR
+  ADMIN
+}
+
+enum UserStatus {
+  PENDING
+  INVITED
+  ACTIVE
+  SUSPENDED
+  REJECTED
+}
+
+enum TokenType {
+  EMAIL_VERIFY
+  PASSWORD_RESET
+  INVITE
+}
+
+enum ShiftType {
+  FIXED
+  NIGHT
+  FLEXIBLE
+}
+
+enum AttendanceStatus {
+  PRESENT
+  LATE
+  ABSENT
+  HALF_DAY
+  ON_LEAVE
+  HOLIDAY
+  WEEKEND
+}
+
+enum LeaveStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+enum HalfDaySession {
+  FIRST_HALF
+  SECOND_HALF
+}
+
+enum ApproverRole {
+  MANAGER
+  HR
+}
+
+enum ApprovalDecision {
+  PENDING
+  APPROVED
+  REJECTED
+  SKIPPED
+}
+
+enum RequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+enum HolidayType {
+  PUBLIC
+  COMPANY
+}
+
+enum NotificationType {
+  LEAVE_STATUS
+  LEAVE_REQUEST
+  LATE_WARNING
+  MISSING_CHECKOUT
+  ACCOUNT_APPROVAL
+  REGULARIZATION
+  LATE_PENALTY
+  GENERAL
+}
+
+// ---------- people & access ----------
+
+model User {
+  id               String     @id @default(cuid())
+  employeeCode     String?    @unique
+  name             String
+  email            String     @unique
+  phone            String?
+  passwordHash     String?
+  role             Role       @default(EMPLOYEE)
+  status           UserStatus @default(PENDING)
+  isSuperAdmin     Boolean    @default(false)
+  emailVerifiedAt  DateTime?
+  avatarUrl        String?
+  address          String?
+  emergencyContact String?
+  dateOfBirth      DateTime?  @db.Date
+  joinDate         DateTime?  @db.Date
+  lastLoginAt      DateTime?
+
+  departmentId  String?
+  department    Department?  @relation("DepartmentMembers", fields: [departmentId], references: [id])
+  designationId String?
+  designation   Designation? @relation(fields: [designationId], references: [id])
+  managerId     String?
+  manager       User?        @relation("Reports", fields: [managerId], references: [id])
+  reports       User[]       @relation("Reports")
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  refreshTokens      RefreshToken[]
+  tokens             VerificationToken[]
+  shifts             EmployeeShift[]
+  attendance         Attendance[]
+  leaveBalances      LeaveBalance[]
+  leaveRequests      LeaveRequest[]
+  leaveApprovals     LeaveApproval[]
+  regularizations    RegularizationRequest[] @relation("RegularizationOwner")
+  reviewedRequests   RegularizationRequest[] @relation("RegularizationReviewer")
+  notifications      Notification[]
+  auditLogs          AuditLog[]
+  latePenalties      LatePenalty[]
+  headOfDepartments  Department[]            @relation("DepartmentHead")
+
+  @@index([departmentId])
+  @@index([status])
+  @@index([role])
+  @@index([managerId])
+  @@index([createdAt])
+  @@index([deletedAt])
+}
+
+model RefreshToken {
+  id           String    @id @default(cuid())
+  userId       String
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash    String    @unique
+  /** Every rotation of one login shares a family; reuse of a revoked token revokes the family. */
+  family       String
+  remember     Boolean   @default(false)
+  expiresAt    DateTime
+  revokedAt    DateTime?
+  replacedById String?
+  userAgent    String?
+  ip           String?
+  createdAt    DateTime  @default(now())
+
+  @@index([userId])
+  @@index([family])
+  @@index([expiresAt])
+}
+
+model VerificationToken {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      TokenType
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([userId, type])
+}
+
+// ---------- organisation ----------
+
+model Department {
+  id             String   @id @default(cuid())
+  name           String   @unique
+  code           String   @unique
+  description    String?
+  headId         String?
+  head           User?    @relation("DepartmentHead", fields: [headId], references: [id])
+  defaultShiftId String?
+  defaultShift   Shift?   @relation(fields: [defaultShiftId], references: [id])
+
+  members      User[]        @relation("DepartmentMembers")
+  designations Designation[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@index([deletedAt])
+  @@index([createdAt])
+}
+
+model Designation {
+  id           String      @id @default(cuid())
+  title        String
+  level        Int?
+  departmentId String?
+  department   Department? @relation(fields: [departmentId], references: [id])
+  users        User[]
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@unique([title, departmentId])
+  @@index([departmentId])
+}
+
+model Shift {
+  id                     String    @id @default(cuid())
+  name                   String    @unique
+  type                   ShiftType @default(FIXED)
+  /** Minutes after local midnight. */
+  startMinutes           Int
+  endMinutes             Int
+  graceMinutes           Int       @default(15)
+  earlyLeaveGraceMinutes Int       @default(0)
+  /** Worked minutes below this make the day a HALF_DAY. */
+  halfDayMinutes         Int       @default(240)
+  /** 0 = Sunday … 6 = Saturday. */
+  weeklyOffDays          Int[]     @default([5, 6])
+  isDefault              Boolean   @default(false)
+  isActive               Boolean   @default(true)
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+
+  assignments EmployeeShift[]
+  departments Department[]
+  attendance  Attendance[]
+}
+
+model EmployeeShift {
+  id            String    @id @default(cuid())
+  userId        String
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  shiftId       String
+  shift         Shift     @relation(fields: [shiftId], references: [id], onDelete: Cascade)
+  effectiveFrom DateTime  @db.Date
+  effectiveTo   DateTime? @db.Date
+  createdAt     DateTime  @default(now())
+
+  @@index([userId, effectiveFrom])
+  @@index([shiftId])
+}
+
+// ---------- attendance ----------
+
+model Attendance {
+  id                String           @id @default(cuid())
+  userId            String
+  user              User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /** Office-local calendar date the record belongs to. */
+  date              DateTime         @db.Date
+  checkIn           DateTime?
+  checkOut          DateTime?
+  status            AttendanceStatus
+  lateMinutes       Int              @default(0)
+  earlyLeaveMinutes Int              @default(0)
+  workMinutes       Int              @default(0)
+  overtimeMinutes   Int              @default(0)
+  isFlagged         Boolean          @default(false)
+  flagReason        String?
+  autoClosed        Boolean          @default(false)
+  checkInIp         String?
+  checkOutIp        String?
+  note              String?
+  shiftId           String?
+  shift             Shift?           @relation(fields: [shiftId], references: [id])
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+
+  regularizations RegularizationRequest[]
+
+  /** One record per employee per day: makes a double check-in impossible. */
+  @@unique([userId, date])
+  @@index([date])
+  @@index([status])
+  @@index([isFlagged])
+  @@index([createdAt])
+}
+
+model RegularizationRequest {
+  id                String        @id @default(cuid())
+  userId            String
+  user              User          @relation("RegularizationOwner", fields: [userId], references: [id], onDelete: Cascade)
+  attendanceId      String?
+  attendance        Attendance?   @relation(fields: [attendanceId], references: [id], onDelete: SetNull)
+  date              DateTime      @db.Date
+  requestedCheckIn  DateTime?
+  requestedCheckOut DateTime?
+  reason            String
+  status            RequestStatus @default(PENDING)
+  reviewerId        String?
+  reviewer          User?         @relation("RegularizationReviewer", fields: [reviewerId], references: [id])
+  reviewComment     String?
+  reviewedAt        DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  @@index([userId, date])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model LatePenalty {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  year         Int
+  month        Int
+  lateCount    Int
+  daysDeducted Float
+  leaveTypeId  String?
+  createdAt    DateTime @default(now())
+
+  @@unique([userId, year, month])
+}
+
+// ---------- leave ----------
+
+model LeaveType {
+  id                          String   @id @default(cuid())
+  name                        String   @unique
+  code                        String   @unique
+  yearlyQuota                 Float
+  isPaid                      Boolean  @default(true)
+  carryForward                Boolean  @default(false)
+  maxCarryForward             Float    @default(0)
+  maxConsecutiveDays          Int?
+  allowHalfDay                Boolean  @default(true)
+  requiresAttachmentAfterDays Int?
+  color                       String?
+  isActive                    Boolean  @default(true)
+  createdAt                   DateTime @default(now())
+  updatedAt                   DateTime @updatedAt
+
+  balances LeaveBalance[]
+  requests LeaveRequest[]
+}
+
+model LeaveBalance {
+  id             String    @id @default(cuid())
+  userId         String
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  leaveTypeId    String
+  leaveType      LeaveType @relation(fields: [leaveTypeId], references: [id], onDelete: Cascade)
+  year           Int
+  allocated      Float
+  carriedForward Float     @default(0)
+  /** Manual HR adjustments and late-policy deductions (negative). */
+  adjusted       Float     @default(0)
+  used           Float     @default(0)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@unique([userId, leaveTypeId, year])
+  @@index([year])
+}
+
+model LeaveRequest {
+  id             String          @id @default(cuid())
+  userId         String
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  leaveTypeId    String
+  leaveType      LeaveType       @relation(fields: [leaveTypeId], references: [id])
+  startDate      DateTime        @db.Date
+  endDate        DateTime        @db.Date
+  isHalfDay      Boolean         @default(false)
+  halfDaySession HalfDaySession?
+  days           Float
+  reason         String
+  attachmentUrl  String?
+  status         LeaveStatus     @default(PENDING)
+  /** 1-based index of the approval level awaiting a decision. */
+  currentLevel   Int             @default(1)
+  cancelledAt    DateTime?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  approvals LeaveApproval[]
+
+  @@index([userId, status])
+  @@index([status])
+  @@index([startDate, endDate])
+  @@index([createdAt])
+}
+
+model LeaveApproval {
+  id             String           @id @default(cuid())
+  leaveRequestId String
+  leaveRequest   LeaveRequest     @relation(fields: [leaveRequestId], references: [id], onDelete: Cascade)
+  level          Int
+  approverRole   ApproverRole
+  approverId     String?
+  approver       User?            @relation(fields: [approverId], references: [id])
+  decision       ApprovalDecision @default(PENDING)
+  comment        String?
+  decidedAt      DateTime?
+  createdAt      DateTime         @default(now())
+
+  @@unique([leaveRequestId, level])
+  @@index([approverRole, decision])
+}
+
+model Holiday {
+  id          String      @id @default(cuid())
+  name        String
+  date        DateTime    @db.Date
+  type        HolidayType @default(PUBLIC)
+  description String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@unique([date, name])
+  @@index([date])
+}
+
+// ---------- system ----------
+
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      NotificationType
+  title     String
+  body      String
+  link      String?
+  readAt    DateTime?
+  createdAt DateTime         @default(now())
+
+  @@index([userId, readAt])
+  @@index([createdAt])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String?
+  actor     User?    @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  action    String
+  entity    String
+  entityId  String?
+  before    Json?
+  after     Json?
+  ip        String?
+  createdAt DateTime @default(now())
+
+  @@index([entity, entityId])
+  @@index([actorId])
+  @@index([createdAt])
+}
+
+model Setting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
