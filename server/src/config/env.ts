@@ -34,6 +34,8 @@ const schema = z.object({
   MAIL_FROM: z.string().default('Hajira <no-reply@hajira.test>'),
   CLOUDINARY_URL: z.string().optional(),
   UPLOAD_MAX_MB: z.coerce.number().positive().default(5),
+  // Vercel Cron sends `Authorization: Bearer <CRON_SECRET>`; without it the /api/cron endpoints stay closed.
+  CRON_SECRET: z.string().min(16).optional(),
   ENABLE_CRON: z
     .enum(['true', 'false'])
     .default('true')

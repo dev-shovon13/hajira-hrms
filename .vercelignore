@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+node_modules
+.next
+dist
+server/uploads/*
+!server/uploads/.gitkeep
+server-dev.log
+.neon
+.impeccable/config.local.json

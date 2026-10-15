@@ -18,16 +18,24 @@ function guard(name: string, fn: () => Promise<unknown>) {
   };
 }
 
+/** The scheduled jobs by name; serverless hosts trigger them over HTTP (GET /api/cron/:job) instead of node-cron. */
+export const jobs: Record<string, () => Promise<unknown>> = {
+  'auto-close': () => autoCloseOpenDays(),
+  'close-day': () => closeDay(),
+  'late-policy': () => applyLatePolicy(),
+  'leave-year': () => rollLeaveYear(),
+};
+
 export function startJobs() {
   const timezone = env.OFFICE_TIMEZONE;
   // Close forgotten check-outs once their shift is well over (night shifts included).
-  tasks.push(cron.schedule('*/15 * * * *', guard('auto-close', () => autoCloseOpenDays()), { timezone }));
+  tasks.push(cron.schedule('*/15 * * * *', guard('auto-close', jobs['auto-close']), { timezone }));
   // Shortly after midnight, settle yesterday: ABSENT / ON_LEAVE / HOLIDAY / WEEKEND for everyone without a record.
-  tasks.push(cron.schedule('10 0 * * *', guard('close-day', () => closeDay()), { timezone }));
+  tasks.push(cron.schedule('10 0 * * *', guard('close-day', jobs['close-day']), { timezone }));
   // On the 1st, apply "X late marks = 1 leave day" for the previous month.
-  tasks.push(cron.schedule('30 1 1 * *', guard('late-policy', () => applyLatePolicy()), { timezone }));
+  tasks.push(cron.schedule('30 1 1 * *', guard('late-policy', jobs['late-policy']), { timezone }));
   // On 1 January, open the new leave year (carry-forward applied).
-  tasks.push(cron.schedule('0 2 1 1 *', guard('leave-year', () => rollLeaveYear()), { timezone }));
+  tasks.push(cron.schedule('0 2 1 1 *', guard('leave-year', jobs['leave-year']), { timezone }));
   logger.info(`Scheduled ${tasks.length} jobs (${timezone})`);
 }
 

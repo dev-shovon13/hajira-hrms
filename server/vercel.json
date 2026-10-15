@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build && mkdir -p public",
+  "outputDirectory": "public",
+  "regions": ["sin1"],
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
+  "crons": [
+    { "path": "/api/cron/auto-close", "schedule": "45 17 * * *" },
+    { "path": "/api/cron/close-day", "schedule": "10 18 * * *" },
+    { "path": "/api/cron/late-policy", "schedule": "0 20 1 * *" },
+    { "path": "/api/cron/leave-year", "schedule": "0 20 1 1 *" }
+  ]
+}

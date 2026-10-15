@@ -1,7 +1,8 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  // index: long-running server; vercel: the app alone, served as a Vercel function (api/index.js).
+  entry: ['src/index.ts', 'src/vercel.ts'],
   outDir: 'dist',
   format: ['cjs'],
   target: 'node20',

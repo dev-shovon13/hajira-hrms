@@ -14,6 +14,8 @@ import { apiLimiter } from '@/middleware/rateLimit';
 import { errorHandler, notFoundHandler } from '@/middleware/errorHandler';
 import { apiRouter } from '@/routes';
 import { buildOpenApiDocument } from '@/docs/openapi';
+import { jobs } from '@/jobs';
+import { AppError } from '@/utils/AppError';
 
 export function createApp() {
   const app = express();
@@ -70,6 +72,18 @@ export function createApp() {
     res.json(openApi);
   });
   app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApi, { customSiteTitle: 'Hajira API', swaggerOptions: { persistAuthorization: true } }));
+
+  // Scheduled jobs for serverless hosts, where node-cron cannot run (see vercel.json crons).
+  app.get('/api/cron/:job', async (req, res, next) => {
+    if (!env.CRON_SECRET || req.headers.authorization !== `Bearer ${env.CRON_SECRET}`) return next(AppError.unauthorized());
+    const run = jobs[req.params.job];
+    if (!run) return next(AppError.notFound('Job'));
+    try {
+      res.json({ success: true, data: await run(), message: `Job ${req.params.job} done` });
+    } catch (err) {
+      next(err);
+    }
+  });
 
   app.use('/api/v1', apiLimiter, apiRouter);
 
