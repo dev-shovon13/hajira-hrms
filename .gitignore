@@ -10,3 +10,4 @@ server/uploads/*
 .DS_Store
 .neon
 .vercel
+.claude/settings.local.json
